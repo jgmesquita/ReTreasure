@@ -1,0 +1,110 @@
+/* Style Register Item Form*/
+
+.register_item description{
+    display: flex;
+    /*border: 2px solid #415244; */
+    padding: 15px;
+    /* top right bottom left*/
+    margin: 80px 40px 40px 40px; /* Add margin around the box */
+    margin-left: 50px ;
+    background-color: #DDE4DF; /* Light background color */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow */
+    border-radius: 25px;
+
+}
+
+/* Style for the input element */
+input {
+    width: 100%; /*Set the width of the input element */
+    padding: 2px; 
+    margin: 10px 10; 
+    background-color: #BECBC0; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-sizing:border-box;
+    color: #333; 
+    font-size: 14px;
+}
+
+select{
+    background-color: #A7B9AB;
+    width: 100%;
+    padding: 2px; 
+    margin: 10px 10; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-sizing:border-box;
+    color: #333; 
+    font-size: 14px;
+}
+
+.register_item box {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px 150px 0px 150px;
+    background-color: #DDE4DF;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow */
+    border-radius: 30px;
+}
+
+.register_item element {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: flex-start; 
+    gap: 10px; /* Add space between form elements */
+    padding: 30px; 
+    margin: 20px 0px 20px 0px;
+
+}
+
+
+.register_item upload {
+    display: flex;
+    padding: 150px;
+    margin: 40px 150px 30px 150px;
+    background-color: #DDE4DF; 
+    border-radius: 5px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow */
+    border-radius: 25px;
+
+}
+
+
+
+
+.register_item input,
+
+
+/* Register Button*/
+.register_item button {
+    margin: 25px 0px 30px 0px;
+    padding: 10px 20px;
+    border: none; 
+    background-color: #9C0D38;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px; 
+    font-size:  20px;
+    font-family: 'Jersey 25', sans-serif;
+}
+.register_item button:hover {
+    background-color: #CE5374;
+}
+
+
+
+/*fonts*/
+
+.questrial-regular {
+    font-family: "Questrial", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .jersey-25-regular {
+    font-family: "Jersey 25", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  

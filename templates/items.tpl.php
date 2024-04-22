@@ -175,40 +175,55 @@
 <?php } ?>
 
 <?php function drawRegisterItemForm(PDO $dbh) { ?>
+    <head>
+    <title>Register Item</title>
+    <link rel="stylesheet" type="text/css" href="/css/registerItem.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+25&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    </head>
+
     <form action="/actions/action_register_item.php" method="post" class="register_item" enctype="multipart/form-data">
+        <description>
         <label for="descriptionItem">Write a description:</label>
-        <input type="text" name="descriptionItem" placeholder="description">
-        <label for="category">Choose a category:</label>
+        <input type="text" name="descriptionItem" placeholder="description"></description>
+        <box>
+        <element><label for="category">Choose a category:</label>
         <select name="category" id="category">
             <?php $categories = get_all_categories($dbh);
             foreach ($categories as $category) { ?>
                 <option value="<?=$category?>"><?=$category?></option>
             <?php } ?> 
-        </select>
+        </select></element>
+        <element>
         <label for="color">Color:</label>
-        <input type="text" name="color" placeholder="color">
-        <label for="sizeItem">Choose a size:</label>
+        <input type="text" name="color" placeholder="color"></element>
+        <element><label for="sizeItem">Choose a size:</label>
         <select name="sizeItem" id="sizeItem">
             <?php $sizes = get_all_sizes($dbh);
             foreach ($sizes as $size) { ?>
                 <option value="<?=$size?>"><?=$size?></option>
             <?php } ?> 
-        </select>
-        <label for="price">Price:</label>
-        <input type="number" name="price" placeholder="price">
-        <label for="brand">Brand:</label>
-        <input type="text" name="brand" placeholder="brand">
-        <label for="model">Model:</label>
-        <input type="text" name="model" placeholder="model">
-        <label for="condition">Choose a condition:</label>
+        </select></element>
+        <element><label for="price">Price:</label>
+        <input type="number" name="price" placeholder="price"></element>
+        <element><label for="brand">Brand:</label>
+        <input type="text" name="brand" placeholder="brand"></element>
+        <element><label for="model">Model:</label>
+        <input type="text" name="model" placeholder="model"></element>
+        <element><label for="condition">Choose a condition:</label>
         <select name="condition" id="condition">
             <?php $conditions = get_all_conditions($dbh);
             foreach ($conditions as $condition) { ?>
                 <option value="<?=$condition?>"><?=$condition?></option>
             <?php } ?> 
-        </select>
-        <label for="image">Upload a picture:</label>
-        <input type="file" name="image" placeholder="file">
+        </select></element> </box>
+        <upload><label for="image">Upload a picture:</label>
+        <input type="file" name="image" placeholder="file"></upload>
         <button type="submit">Register Item</button>
     </form>
 <?php } ?>
