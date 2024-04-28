@@ -189,7 +189,7 @@
 
     <form action="/actions/action_register_item.php" method="post" class="register_item" enctype="multipart/form-data">
         <description>
-        <label for="descriptionItem">Write a description:</label>
+        <label for="descriptionItem">Item description:</label>
         <input type="text" name="descriptionItem" placeholder="description"></description>
         <box>
         <element><label for="category">Choose a category:</label>
@@ -199,6 +199,8 @@
                 <option value="<?=$category?>"><?=$category?></option>
             <?php } ?> 
         </select></element>
+        <element><label for="price">Price:</label>
+        <input type="number" name="price" placeholder="price"></element>
         <element>
         <label for="color">Color:</label>
         <input type="text" name="color" placeholder="color"></element>
@@ -209,8 +211,6 @@
                 <option value="<?=$size?>"><?=$size?></option>
             <?php } ?> 
         </select></element>
-        <element><label for="price">Price:</label>
-        <input type="number" name="price" placeholder="price"></element>
         <element><label for="brand">Brand:</label>
         <input type="text" name="brand" placeholder="brand"></element>
         <element><label for="model">Model:</label>

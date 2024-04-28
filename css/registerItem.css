@@ -1,22 +1,25 @@
 /* Style Register Item Form*/
 
+/*fica melhor se aumentar o tamnho dos selects ??*/
+
+
 .register_item description{
     display: flex;
     /*border: 2px solid #415244; */
-    padding: 15px;
+    padding: 30px 20px 20px 20px;
     /* top right bottom left*/
-    margin: 80px 40px 40px 40px; /* Add margin around the box */
+    margin: 80px 40px 40px 40px; 
     margin-left: 50px ;
-    background-color: #DDE4DF; /* Light background color */
-    border-radius: 5px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow */
+    background-color: #DDE4DF; 
+    border-radius: 5px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     border-radius: 25px;
 
 }
 
 /* Style for the input element */
 input {
-    width: 100%; /*Set the width of the input element */
+    width: 100%; 
     padding: 2px; 
     margin: 10px 10; 
     background-color: #BECBC0; 
@@ -25,13 +28,14 @@ input {
     box-sizing:border-box;
     color: #333; 
     font-size: 14px;
+    font-family: 'Questrial', sans-serif;
 }
 
-select{
+.register_item select{
     background-color: #A7B9AB;
-    width: 100%;
+    width: 1000px;
     padding: 2px; 
-    margin: 10px 10; 
+    margin: 20px 6; 
     border: 1px solid #ccc; 
     border-radius: 4px; 
     box-sizing:border-box;
@@ -61,19 +65,26 @@ select{
 
 .register_item upload {
     display: flex;
-    padding: 150px;
+    padding: 100px;
     margin: 40px 150px 30px 150px;
     background-color: #DDE4DF; 
     border-radius: 5px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     border-radius: 25px;
 
 }
 
-
+label{
+    font-size: 24px;
+    font-family: 'Questrial', sans-serif;
+}
 
 
 .register_item input,
+/*
+.register_item select {
+    width: 1000px; 
+}*
 
 
 /* Register Button*/
