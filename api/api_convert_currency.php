@@ -15,5 +15,4 @@ function convertCurrency($amount, $from_currency, $to_currency) {
         return "Currency not found in exchange rates data.";
     }
 }
-
 echo convertCurrency($_GET['cost'], 'EUR', $_GET['currency']);
