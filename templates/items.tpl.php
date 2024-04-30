@@ -279,6 +279,7 @@
 <?php } ?>
 
 <?php function drawCheckout(PDO $dbh, int $total, int $quantity) { ?>
+    
     <p>Your order has a total of <?= $total?> items and the cost is <?=$quantity?>&#8364!</p>
     <input type="hidden" name="cost" value = <?=$quantity?>>
     <label>Change currency:</label>
