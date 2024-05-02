@@ -1,0 +1,53 @@
+h1 {
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #333; 
+    text-align: center;
+    margin-bottom: 20px; 
+    letter-spacing: -0.5px; 
+    
+}
+
+/* NAO ESTA A FUNCIONARRRRRR supostamente é quando nao é visitado*/
+h1 a:link {
+    color: rgb(230, 138, 138); 
+}
+
+
+h1 a:visited {
+    color: rgb(7, 8, 7); 
+}
+
+/* Quando se clica */
+h1 a:active {
+    color: rgb(79, 125, 97); 
+}
+
+/* Remover linha de link */
+h1 a {
+    text-decoration: none;
+}
+
+
+h1 {
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #333; 
+    text-align: center;
+    margin-bottom: 20px; 
+    letter-spacing: -0.5px; 
+    
+}
+
+h2 {
+    font-family: "Poppins", sans-serif; /* Choose a modern and sophisticated font */
+    font-weight: 400;
+    font-style: normal;
+    color: #333; 
+    text-align: center;
+    margin-bottom: 10px; 
+    font-size: 1em; 
+    letter-spacing: 0.5px;
+}
