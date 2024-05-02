@@ -122,6 +122,10 @@
 <?php } ?>
 
 <?php function drawLogoutForm(Session $session) { ?>
+  <head>
+    <link rel="stylesheet" href="/css/logout.css">
+  </head>
+
   <form action="/actions/action_logout.php" method="post" class="logout">
     <a href="/pages/profile.php"><?=$session->getId()?></a>
     <button type="submit">Logout</button>

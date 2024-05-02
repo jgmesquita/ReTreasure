@@ -125,6 +125,10 @@
 <?php } ?>
 
 <?php function drawListedItems(PDO $dbh, array $items) { ?>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/css/checkoutItem.css">
+    </head>    
+
     <section id="items">
         <table>
             <tr>
@@ -171,7 +175,7 @@
         <?php } ?>
         </table>
     </section>
-    <a href="/pages/profile.php">Back</a>
+    <a href="/pages/profile.php" class="button">Back</a>
 <?php } ?>
 
 <?php function drawRegisterItemForm(PDO $dbh) { ?>

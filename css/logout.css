@@ -1,0 +1,40 @@
+.logout {
+    text-align: center; /* Center align the form */
+    margin-top: 20px; /* Add some spacing at the top */
+}
+
+.logout button {
+    background-color: #4CAF50; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove button border */
+    padding: 12px 24px; /* Button padding */
+    font-size: 16px; /* Button font size */
+    cursor: pointer; /* Cursor style */
+    border-radius: 4px; /* Button border radius */
+    transition: background-color 0.3s ease; /* Smooth transition for button background color */
+    margin: 0 10px; /* Add spacing between buttons */
+}
+
+.logout button:hover {
+    background-color: #45a049; /* Change button background color on hover */
+}
+
+.profile-btn {
+    /* Customize styles for the profile button if needed */
+}
+
+.search-btn {
+    /* Customize styles for the search button if needed */
+}
+
+.register-btn {
+    /* Customize styles for the register button if needed */
+}
+
+.checkout-btn {
+    /* Customize styles for the checkout button if needed */
+}
+
+.logout-btn {
+    /* Customize styles for the logout button if needed */
+}
