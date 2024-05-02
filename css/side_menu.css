@@ -1,0 +1,41 @@
+div {
+    position: fixed;
+    top: 0; /*pode é começar so deppois do header...*/
+    left: 0; 
+    height: 97%; 
+    width: 200px; /
+    background-color: #f8f8f8; 
+    padding: 10px; 
+    /*box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1); */
+    
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds height */
+    /* The value of overflow-y can also be set to 'scroll' to force a scrollbar regardless of content height */
+    
+
+}
+
+/*  unordered list */
+div ul {
+    list-style-type: none; /* Remove the default list styling */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+/*list items  */
+div li {
+    margin: 10px 0; 
+}
+
+/* links */
+div a {
+    text-decoration: none; 
+    color: #333; 
+    display: block; 
+    padding: 10px; 
+    transition: background-color 0.3s; 
+}
+
+
+div a:hover {
+    background-color: #e0e0e0; 
+}

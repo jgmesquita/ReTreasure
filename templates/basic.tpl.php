@@ -8,6 +8,41 @@
   require_once(__DIR__ . '/../database/user.db.php');
 ?>
 
+<?php function drawMenu(string $title,PDO $dbh) { ?>
+  <!DOCTYPE html>
+  <html lang="en-US">
+  <head>
+    <title><?=$title?></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel="stylesheet" href="/css/style.css">-->
+    <link rel="stylesheet" href="/css/side_menu.css"> 
+    <script src="/javascript/search.js" defer></script>
+  </head>
+  <body>
+    <div class="menu>">
+      <h4>Select by Category</h4>
+      <ul>
+        <?php
+          $categories = get_all_categories($dbh);
+          foreach($categories as $category){
+            $parts = explode('-', $category);
+            ?>
+            <li>
+            <a href="items_by_category.php?category=<?=($category) ?>">
+              <?= $parts[1] ?>
+              </a>
+            </li>
+          <?php } ?>    
+      </ul>
+
+    </div>
+
+    <main>
+<?php } ?>
+
+
+
 <?php function drawHeader(Session $session, string $title, PDO $dbh) { ?>
 <!DOCTYPE html>
 <html lang="en-US">
@@ -27,26 +62,13 @@
         else drawLoginForm();
       ?>
     </header>
+    <form method="POST" action="/actions/action_open_menu.php">
+    <button type="submit" name="hover_action" value="draw_menu">
+        Menu
+    </button>
+    </form>
 
-    <!--<div>
-      <h4>Select by Category</h4>
-      <ul>
-        <?php
-          /*$categories = get_all_categories($dbh);
-          foreach($categories as $category){
-            $parts = explode('-', $category);
-            ?>
-            <li>
-            <a href="items_by_category.php?category=<?=($category) ?>">
-              <?= $parts[1] ?>
-              </a>
-            </li>
-          <?php } */?>    
-      </ul>
 
-    </div>-->
-
-    <main>
 <?php } ?>
 
 <?php function drawHeaderNoLogin(Session $session, string $title) { ?>
