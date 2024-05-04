@@ -18,9 +18,9 @@
                 <h3><?=$item->category?></h3>
                 <img src="/images/path.png"><br>
                 <a href="/pages/item.php?id=<?=$item->id?>">Link</a>
-                <p id="descriptionItem">Description: <?=$item->descriptionItem?></p>
-                <p id="model">Model: <?=$item->model?></p>
-                <p id="brand">Brand: <?=$item->brand?></p>
+                <p id="descriptionItem">Description: <?=htmlspecialchars($item->descriptionItem)?></p>
+                <p id="model">Model: <?=htmlspecialchars($item->model)?></p>
+                <p id="brand">Brand: <?=htmlspecialchars($item->brand)?></p>
                 <p id="price">Price: <?=$item->price?>&#8364</p>
             </article>
             <?php } ?>
@@ -32,10 +32,10 @@
     <section id="item">
         <h3><?=$item->category?></h3>
         <img src=<?=$item->imagePath?>><br>
-        <p id="model">Model: <?=$item->model?></p>
-        <p id="brand">Brand: <?=$item->brand?></p>
+        <p id="model">Model: <?=htmlspecialchars($item->model)?></p>
+        <p id="brand">Brand: <?=htmlspecialchars($item->brand)?></p>
         <p id="price">Price: <?=$item->price?></p>
-        <p id="descriptionItem">Description: <?=$item->descriptionItem?></p>
+        <p id="descriptionItem">Description: <?=htmlspecialchars($item->descriptionItem)?></p>
     </section>
     <?php $_SESSION['id'] = $item->id; ?>
     <?php if (isset($_SESSION['username'])) { ?>
@@ -65,20 +65,22 @@
     <section id="comments">
         <?php foreach ($comments as $comment) { ?>
             <section id="comment">
-                <p id="userComment"><?=$comment->user?> commented:</p>
-                <p id="textComment"><?=$comment->text?></p>
+                <p id="userComment"><?=htmlspecialchars($comment->user)?> commented:</p>
+                <p id="textComment"><?=htmlspecialchars($comment->text)?></p>
                 <?php $replies = get_all_replies($dbh, $comment->id);
                 foreach ($replies as $reply) { ?>
                     <section id="reply">
-                    <p id="userReply"><?=$reply->user?> replied:</p>
-                    <p id="textReply"><?=$reply->text?></p>
+                    <p id="userReply"><?=htmlspecialchars($reply->user)?> replied:</p>
+                    <p id="textReply"><?=htmlspecialchars($reply->text)?></p>
                     </section>
                 <?php } ?>
+                <?php if (isset($_SESSION['username'])) { ?>
                 <form action="/actions/action_add_reply.php" method="post" class="reply">
                     <input type="hidden" name="id" value = <?=$comment->id?>>
                     <input type="text" name="reply" placeholder="reply">
                     <button type="submit">Reply</button>
                 </form>
+                <?php } ?>
             </section>
         <?php } ?>
     </section>
@@ -190,7 +192,7 @@
 <?php function drawRegisterItemForm(PDO $dbh) { ?>
     <form action="/actions/action_register_item.php" method="post" class="register_item" enctype="multipart/form-data">
         <label for="descriptionItem">Write a description:</label>
-        <input type="text" name="descriptionItem" placeholder="description">
+        <input type="text" name="descriptionItem" placeholder="description" required>
         <label for="category">Choose a category:</label>
         <select name="category" id="category">
             <?php $categories = get_all_categories($dbh);
@@ -199,7 +201,7 @@
             <?php } ?> 
         </select>
         <label for="color">Color:</label>
-        <input type="text" name="color" placeholder="color">
+        <input type="text" name="color" placeholder="color" required>
         <label for="sizeItem">Choose a size:</label>
         <select name="sizeItem" id="sizeItem">
             <?php $sizes = get_all_sizes($dbh);
@@ -208,11 +210,11 @@
             <?php } ?> 
         </select>
         <label for="price">Price:</label>
-        <input type="number" name="price" placeholder="price">
+        <input type="number" name="price" placeholder="price" required>
         <label for="brand">Brand:</label>
-        <input type="text" name="brand" placeholder="brand">
+        <input type="text" name="brand" placeholder="brand" required>
         <label for="model">Model:</label>
-        <input type="text" name="model" placeholder="model">
+        <input type="text" name="model" placeholder="model" required>
         <label for="condition">Choose a condition:</label>
         <select name="condition" id="condition">
             <?php $conditions = get_all_conditions($dbh);
@@ -221,7 +223,7 @@
             <?php } ?> 
         </select>
         <label for="image">Upload a picture:</label>
-        <input type="file" name="image" placeholder="file">
+        <input type="file" name="image" placeholder="file" required>
         <button type="submit">Register Item</button>
     </form>
 <?php } ?>
@@ -230,7 +232,7 @@
     <form action="/actions/action_update_item.php" method="post" class="update_item">
         <input type="hidden" name="id" value = <?=$id?>>
         <label for="descriptionItem">Write a description:</label>
-        <input type="text" name="descriptionItem" placeholder="description">
+        <input type="text" name="descriptionItem" placeholder="description" required>
         <label for="category">Choose a category:</label>
         <select name="category" id="category">
             <?php $categories = get_all_categories($dbh);
@@ -239,7 +241,7 @@
             <?php } ?> 
         </select>
         <label for="color">Color:</label>
-        <input type="text" name="color" placeholder="color">
+        <input type="text" name="color" placeholder="color" required>
         <label for="sizeItem">Choose a size:</label>
         <select name="sizeItem" id="sizeItem">
             <?php $sizes = get_all_sizes($dbh);
@@ -248,11 +250,11 @@
             <?php } ?> 
         </select>
         <label for="price">Price:</label>
-        <input type="number" name="price" placeholder="price">
+        <input type="number" name="price" placeholder="price" required>
         <label for="brand">Brand:</label>
-        <input type="text" name="brand" placeholder="brand">
+        <input type="text" name="brand" placeholder="brand" required>
         <label for="model">Model:</label>
-        <input type="text" name="model" placeholder="model">
+        <input type="text" name="model" placeholder="model" required>
         <label for="condition">Choose a condition:</label>
         <select name="condition" id="condition">
             <?php $conditions = get_all_conditions($dbh);

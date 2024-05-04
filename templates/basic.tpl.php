@@ -8,6 +8,7 @@
   require_once(__DIR__ . '/../database/user.db.php');
 ?>
 
+
 <?php function drawMenu(string $title,PDO $dbh) { ?>
   <!DOCTYPE html>
   <html lang="en-US">
@@ -48,44 +49,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/header.css">
-    
-  
+    <link rel="stylesheet" href="/css/header.css"> 
+    <link rel="stylesheet" href="/css/login.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
     <script src="/javascript/search.js" defer></script>
-
   </head>
   <body>
     <header>
-      <div class="header-container">
-        <h1><a href="/">Amazon LTW Shop</a></h1>
-        <h2>Rediscover Treasures</h2>
-        <h3>Where Pre-Loved Finds New Love!</h3>
-      </div>
+      <h1><a href="/">LTW Shop</a></h1>
+      <h2><p>Rediscover Treasures:<p> Where Pre-Loved Finds New Love!</h2>
+      <nav id="sec">
       <?php 
         if ($session->isLoggedIn()) drawLogoutForm($session);
         else drawLoginForm();
-      ?>
+      ?></nav>
     </header>
-
-    <!--<div>
-      <h4>Select by Category</h4>
-      <ul>
-        <?php
-          /*$categories = get_all_categories($dbh);
-          foreach($categories as $category){
-            $parts = explode('-', $category);
-            ?>
-            <li>
-            <a href="items_by_category.php?category=<?=($category) ?>">
-              <?= $parts[1] ?>
-              </a>
-            </li>
-          <?php } */?>    
-      </ul>
-
-    </div>-->
-
-    <main>
+</body>
 <?php } ?>
 
 <?php function drawHeaderNoLogin(Session $session, string $title) { ?>
@@ -96,6 +77,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/header.css"> 
     <script src="/javascript/search.js" defer></script>
   </head>
   <body>
@@ -117,9 +99,9 @@
 <?php } ?>
 
 <?php function drawLoginForm() { ?>
-  <form action="/actions/action_login.php" method="post" class="login">
-    <input type="username" name="username" placeholder="username">
-    <input type="password" name="password" placeholder="password">
+  <form id="i1" action="/actions/action_login.php" method="post" class="login">
+    <input type="username" name="username" placeholder="username" required>
+    <input type="password" name="password" placeholder="password" required>
     <button type="submit">Login</button>
     <a href="/pages/register.php"> Register</a>
     <a href="/pages/search.php"> Search</a>
@@ -128,16 +110,16 @@
 
 <?php function drawRegisterForm() { ?>
   <form action="/actions/action_register.php" method="post" class="register">
-    <input type="username" name="username" placeholder="username">
-    <input type="password" name="password" placeholder="password">
-    <input type="text" name="firstName" placeholder="firstName">
-    <input type="text" name="lastName" placeholder="lastName">
-    <input type="text" name="address_" placeholder="address_">
-    <input type="text" name="city" placeholder="city">
-    <input type="text" name="country" placeholder="country">
-    <input type="text" name="postalCode" placeholder="postalCode">
-    <input type="text" name="email" placeholder="email">
-    <input type="text" name="phone" placeholder="phone">
+    <input type="username" name="username" placeholder="username" required>
+    <input type="password" name="password" placeholder="password" required>
+    <input type="text" name="firstName" placeholder="firstName" required>
+    <input type="text" name="lastName" placeholder="lastName" required>
+    <input type="text" name="address_" placeholder="address_" required>
+    <input type="text" name="city" placeholder="city" required>
+    <input type="text" name="country" placeholder="country" required>
+    <input type="text" name="postalCode" placeholder="postalCode" required>
+    <input type="text" name="email" placeholder="email" required>
+    <input type="text" name="phone" placeholder="phone" required>
     <button type="submit">Register</button>
   </form>
 <?php } ?>
@@ -148,7 +130,7 @@
   </head>
 
   <form action="/actions/action_logout.php" method="post" class="logout">
-    <a href="/pages/profile.php"><?=$session->getId()?></a>
+    <a href="/pages/profile.php"><?=htmlentities($session->getId())?></a>
     <button type="submit">Logout</button>
     <a href="/pages/search.php">Search</a>
     <a href="/pages/register_item.php">Register Item</a>
@@ -158,7 +140,7 @@
 
 <?php function drawChangeUsername() { ?>
   <form action="/actions/action_change_username.php" method="post" class="change_username">
-    <input type=text name="username" placeholder="new username">
+    <input type=text name="username" placeholder="new username" required>
     <button type="submit">Change Username</button>
   </form>
   <a href="/pages/profile.php">Back</a>
@@ -166,8 +148,8 @@
 
 <?php function drawChangeName() { ?>
   <form action="/actions/action_change_name.php" method="post" class="change_name">
-    <input type=text name="firstName" placeholder="new firstName">
-    <input type=text name="lastName" placeholder="new lastName">
+    <input type=text name="firstName" placeholder="new firstName" required>
+    <input type=text name="lastName" placeholder="new lastName" required>
     <button type="submit">Change Name</button>
   </form>
   <a href="/pages/profile.php">Back</a>
@@ -175,7 +157,7 @@
 
 <?php function drawChangeEmail() { ?>
   <form action="/actions/action_change_email.php" method="post" class="change_name">
-    <input type=text name="email" placeholder="new email">
+    <input type=text name="email" placeholder="new email" required>
     <button type="submit">Change Email</button>
   </form>
   <a href="/pages/profile.php">Back</a>
@@ -183,7 +165,7 @@
 
 <?php function drawChangePassword() { ?>
   <form action="/actions/action_change_password.php" method="post" class="change_name">
-    <input type=text name="password" placeholder="new password">
+    <input type=text name="password" placeholder="new password" required>
     <button type="submit">Change Password</button>
   </form>
   <a href="/pages/profile.php">Back</a>
@@ -220,4 +202,15 @@
         </h4>
     </body>
 
+<?php } ?>
+
+<?php function drawError(int $error) { ?>
+  <?php switch ($error) { 
+    case 1: ?> <p>The password must have at least 8 characters, one of which must be a number!</p> <?php break;
+    case 2: ?> <p>The username is already being used! Try another one!</p> <?php break;
+    case 3: ?> <p>You must be login to use this feature!</p> <?php break;
+    case 4: ?> <p>You must be an admin to use this page!</p> <?php break; 
+    case 5: ?> <p>There was an error! Please try again!</p> <?php break;
+    case 6: ?> <p>The username/password is incorrect!</p> <?php break;
+  } ?>
 <?php } ?>
