@@ -86,6 +86,13 @@
 
 
 <?php function drawListItems(PDO $dbh, array $items) { ?>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+        <link rel="stylesheet" type="text/css" href="/css/checkoutItem.css">
+        <link rel="stylesheet" type="text/css" href="/css/header.css">
+        
+
+    </head>
     <section id="items">
         <table>
             <tr>
@@ -121,7 +128,8 @@
         <?php } ?>
         </table>
     </section>
-    <a href="/pages/profile.php">Back</a>
+    <a href="/pages/profile.php" >Back</a>
+
 <?php } ?>
 
 <?php function drawListedItems(PDO $dbh, array $items) { ?>
@@ -176,6 +184,7 @@
         </table>
     </section>
     <a href="/pages/profile.php" class="button">Back</a>
+    
 <?php } ?>
 
 <?php function drawRegisterItemForm(PDO $dbh) { ?>
@@ -284,24 +293,13 @@
 
 <?php function drawCheckout(PDO $dbh, int $total, int $quantity) { ?>
     <head>
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
         <link rel="stylesheet" type="text/css" href="/css/checkoutItem.css">
-       
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
-    
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Jersey+25&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="/css/header.css">
+        
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
-
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
-        </head>
-    <p>Your order has a total of <?= $total?> items and the cost is <?=$quantity?>&#8364!</p>
+    </head>
+   
     <input type="hidden" name="cost" value = <?=$quantity?>>
     <label>Change currency:</label>
     <section id="currency_conversion">
@@ -314,6 +312,13 @@
         </select>
     </section>
     <div id="output">Selected Currency: None</div>
+    <div class="divider"></div>
+    
+    <!--<p>Your order has a total of <?= $total?> items and the cost is <?=$quantity?>&#8364!</p>-->
+
+    <p>TOTAL &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?= $total ?> items &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <?= $quantity ?>&#8364;!</p>
+
+    
     <form action="/actions/action_checkout.php" method="post" class="checkout">
         <button type="submit">Checkout</button>
     </form>

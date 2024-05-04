@@ -1,4 +1,3 @@
-
 body {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
@@ -8,6 +7,7 @@ body {
     word-break: break-word;
     -webkit-font-smoothing: subpixel-antialiased;
 }
+
 /* Container styles */
 .container {
     max-width: 800px;
@@ -17,7 +17,8 @@ body {
 p {
     font-size: 15px;
     line-height: 1.5;
-    color: #272377;
+    color: #000000;
+    font-weight: bold;
     margin-bottom: 20px; /* Add spacing below paragraphs */
 }
 
@@ -30,12 +31,13 @@ form {
 label {
     display: block;
     font-size: 16px;
-    margin-bottom: 10px;
-    color: #333;
-    font-family: 'Helvetica Neue', Arial, sans-serif; /* Use a modern font */
-    font-weight: 500; /* Use a medium or semi-bold weight for a modern look */
-    text-transform: uppercase; /* Transform text to uppercase for a contemporary feel */
-    letter-spacing: 1px; /* Add some letter spacing for better readability */
+    margin-top: 10px;
+    margin-bottom: 3px;
+    color: #4d4747;
+    font-weight: 500; 
+    font-size: 0.7em;
+    font-weight: bold;
+    
 }
 
 
@@ -43,6 +45,10 @@ label {
     margin-top: 20px;
     font-size: 16px;
     color: #333;
+    color: #4d4747;
+    font-weight: 500; 
+    font-size: 0.7em;
+    font-weight: bold;
 }
 
 /*------------*/
@@ -57,13 +63,11 @@ table {
     font-size: 0.7em; 
     
 }
-
 th, td {
     padding: 5px;
     border: 1px solid #e0e0e0;
     text-align: center;
-    font-family: "Poppins", sans-serif; /* Choose a modern and sophisticated font */
-    font-weight: 400;
+    font-family: "Poppins", sans-serif; 
     font-style: normal;
     
 }
@@ -79,40 +83,57 @@ th a {
 }
 
 th a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
+/*--------*/
+.divider-container {
+    display: flex;
+    justify-content: center; /* Center the divider horizontally */
+}
+
+.divider {
+    height: 2px; /* Set the default height of the divider */
+    background-color: #333; /* Set the background color */
+    margin: 20px auto; /* Add some margin for spacing and center the divider horizontally */
+    width: 40%; /* Set the default width of the divider */
+}
+
+
 a {
-    color: #333;
+    color: #000000;
     text-decoration: none;
     display: inline-block;
     margin-top: 20px;
+    font-weight: bold;
 }
 
 a:hover {
-    text-decoration: underline;
+    text-decoration: none;
+    color: #867b7b;
 }
 
 
-
+/* THIs was for a button that i deleted
 .button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
+    margin-top: 20px;
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--green1);
+    color: #fff;
+    border: none;
+    border-radius: 30px;
     cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .button:hover {
-    background-color: #45a049;
-}
+    background-color: var(--pink1);
+    color:#e0e0e0
+}*/
 
 
 /*------------*/
@@ -125,7 +146,7 @@ a:hover {
     font-size: 18px;
     font-weight: bold;
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: #95d86b;
+    background-color: var(--green5);
     color: #fff;
     border: none;
     border-radius: 30px;
@@ -135,7 +156,7 @@ a:hover {
 }
 
 .checkout button[type="submit"]:hover {
-    background-color: #3b7c18;
+    background-color: var(--green4);
 }
 
 .remove_checkout button[type="submit"] {
@@ -145,7 +166,7 @@ a:hover {
     font-size: 18px;
     font-weight: bold;
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: #ff0000; 
+    background-color: var(--pink2); 
     color: #fff;
     border: none;
     border-radius: 30px;
@@ -155,7 +176,7 @@ a:hover {
 }
 
 .remove_checkout button[type="submit"]:hover {
-    background-color: #cc0000; 
+    background-color: var(--pink1); 
 }
 
 
@@ -190,11 +211,11 @@ a:hover {
 /*focado, mas ver se é essencial ter focus */
 #currency_conversion select:focus {
     outline: none;
-    border: 1px solid #bedfb9;
-    box-shadow: 0 0 5px rgba(129, 201, 134, 0.5);
+    border: 1px solid var(--green1);
+    box-shadow: 0 0 5px var(--green1);
 }
 
 /* quando clico */
 #currency_conversion select:hover {
-    background-color: #c5d5b3;
+    background-color: var(--green1);
 }

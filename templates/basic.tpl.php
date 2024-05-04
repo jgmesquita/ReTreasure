@@ -8,6 +8,38 @@
   require_once(__DIR__ . '/../database/user.db.php');
 ?>
 
+<?php function drawMenu(string $title,PDO $dbh) { ?>
+  <!DOCTYPE html>
+  <html lang="en-US">
+  <head>
+    <title><?=$title?></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/side_menu.css"> 
+    <script src="/javascript/search.js" defer></script>
+  </head>
+  <body>
+    <div class="menu>">
+      <h4>MENU</h4>
+      <ul>
+        <?php
+          $categories = get_all_categories($dbh);
+          foreach($categories as $category){
+            $parts = explode('-', $category);
+            ?>
+            <li>
+            <a href="items_by_category.php?category=<?=($category) ?>">
+              <?= $parts[1] ?>
+              </a>
+            </li>
+          <?php } ?>    
+      </ul>
+    </div>
+  </body>
+<?php } ?>
+
+
 <?php function drawHeader(Session $session, string $title, PDO $dbh) { ?>
 <!DOCTYPE html>
 <html lang="en-US">
@@ -15,31 +47,20 @@
     <title><?=$title?></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/style.css">
-    <script src="/javascript/search.js" defer></script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Paytone+One&family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/header.css">
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&family=Lobster&family=Paytone+One&family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
   
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <script src="/javascript/search.js" defer></script>
 
   </head>
   <body>
     <header>
-      <h1><a href="/">Amazon LTW Shop</a></h1>
-      <h2>Rediscover Treasures: Where Pre-Loved Finds New Love!</h2>
+      <div class="header-container">
+        <h1><a href="/">Amazon LTW Shop</a></h1>
+        <h2>Rediscover Treasures</h2>
+        <h3>Where Pre-Loved Finds New Love!</h3>
+      </div>
       <?php 
         if ($session->isLoggedIn()) drawLogoutForm($session);
         else drawLoginForm();

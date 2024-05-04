@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&family=Lobster&family=Paytone+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rowdies:wght@300;400;700&display=swap');
+
 body {
     text-align: center;
 }
@@ -7,4 +9,82 @@ table {
     margin-right: auto;
 }
 
+/*
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    list-style: none;
+}*/
 
+
+:root {
+    --white1: #FFFEF5;
+    --white2: #FBF7F4;
+    --green1: #EAEEEB;
+    --green2: #BECBC0;
+    --green3: #A7B9AB;
+    --green4: #738D79;
+    --green5: #223126;
+    --pink1: #DC839B;
+    --pink2: #A62048;
+  
+    --largeContWidth: 80%;
+    --medContWidth: 90%;
+    --smallContWidth: 94%;
+  
+  }
+  
+
+  body {
+    background-color: var(--white2);
+  }
+  
+/*-----
+  main{
+    position: relative;
+    top: 4rem;
+  }
+  
+  .container{
+    width: var(largeContWidth);
+    margin: 0 auto;
+  }
+  
+  
+  section h2{
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  
+  h1, h2, h3, h4, h5{
+    line-height: 1.2;
+  }
+  
+  h1{
+    font-size: 3rem;
+  }
+  
+  h2{
+    font-size: 2rem;
+  }
+  
+  h3{
+    font-size: 1.2rem;
+  }
+  
+  h4{
+    font-size: 1.3rem;
+  }
+  
+  img{
+    width: 100%;
+    display: block;
+    object-fit: cover;
+  }
+  
+  */

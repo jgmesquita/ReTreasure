@@ -1,40 +1,30 @@
-.logout {
-    text-align: center; /* Center align the form */
-    margin-top: 20px; /* Add some spacing at the top */
-}
-
 .logout button {
-    background-color: #4CAF50; /* Button background color */
-    color: white; /* Button text color */
-    border: none; /* Remove button border */
-    padding: 12px 24px; /* Button padding */
-    font-size: 16px; /* Button font size */
-    cursor: pointer; /* Cursor style */
-    border-radius: 4px; /* Button border radius */
-    transition: background-color 0.3s ease; /* Smooth transition for button background color */
-    margin: 0 10px; /* Add spacing between buttons */
+    background-color:var(--green3);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    font-style:normal;
+    cursor: pointer;
+    border-radius: 999em;
+    transition: background-color 0.3s ease;
+    margin: 0 10px;
+    /* Add box shadow for a more pronounced button effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Add a subtle hover effect */
+    transition: transform 0.2s ease-in-out;
 }
 
+/* Add a hover effect */
 .logout button:hover {
-    background-color: #45a049; /* Change button background color on hover */
+    background-color: var(--green2);
+    transform: translateY(-2px); 
 }
 
-.profile-btn {
-    /* Customize styles for the profile button if needed */
-}
-
-.search-btn {
-    /* Customize styles for the search button if needed */
-}
-
-.register-btn {
-    /* Customize styles for the register button if needed */
-}
-
-.checkout-btn {
-    /* Customize styles for the checkout button if needed */
-}
-
-.logout-btn {
-    /* Customize styles for the logout button if needed */
+/* Add a focus effect */
+.logout button:focus {
+    outline: none; /* Remove the default focus outline */
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2); /* Add a focus outline */
 }
