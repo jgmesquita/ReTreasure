@@ -15,13 +15,13 @@
     <title><?=$title?></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--<link rel="stylesheet" href="/css/style.css">-->
+    <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/side_menu.css"> 
     <script src="/javascript/search.js" defer></script>
   </head>
   <body>
     <div class="menu>">
-      <h4>Select by Category</h4>
+      <h4>MENU</h4>
       <ul>
         <?php
           $categories = get_all_categories($dbh);
@@ -35,10 +35,8 @@
             </li>
           <?php } ?>    
       </ul>
-
     </div>
-
-    <main>
+  </body>
 <?php } ?>
 
 
@@ -51,24 +49,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/header.css"> 
+    <link rel="stylesheet" href="/css/login.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
     <script src="/javascript/search.js" defer></script>
   </head>
   <body>
     <header>
-      <h1><a href="/">Amazon LTW Shop</a></h1>
-      <h2>Rediscover Treasures: Where Pre-Loved Finds New Love!</h2>
+      <h1><a href="/">LTW Shop</a></h1>
+      <h2><p>Rediscover Treasures:<p> Where Pre-Loved Finds New Love!</h2>
+      <nav id="sec">
       <?php 
         if ($session->isLoggedIn()) drawLogoutForm($session);
         else drawLoginForm();
-      ?>
+      ?></nav>
     </header>
-    <form method="POST" action="/actions/action_open_menu.php">
-    <button type="submit" name="hover_action" value="draw_menu">
-        Menu
-    </button>
-    </form>
-
-
+</body>
 <?php } ?>
 
 <?php function drawHeaderNoLogin(Session $session, string $title) { ?>
@@ -79,6 +77,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/header.css"> 
     <script src="/javascript/search.js" defer></script>
   </head>
   <body>
@@ -100,7 +99,7 @@
 <?php } ?>
 
 <?php function drawLoginForm() { ?>
-  <form action="/actions/action_login.php" method="post" class="login">
+  <form id="i1" action="/actions/action_login.php" method="post" class="login">
     <input type="username" name="username" placeholder="username" required>
     <input type="password" name="password" placeholder="password" required>
     <button type="submit">Login</button>

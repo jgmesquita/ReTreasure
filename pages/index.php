@@ -17,7 +17,7 @@
   $items = Item::getItems($dbh, 5);
 
   drawHeader($session, 'Amazon LTW Shop', $dbh);
-
+  drawMenu('MENU', $dbh);
   drawItems($dbh, $items);
   drawFooter();
   
