@@ -1,0 +1,221 @@
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+/* Container styles */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+p {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #000000;
+    font-weight: bold;
+    margin-bottom: 20px; /* Add spacing below paragraphs */
+}
+
+/* Form styles */
+form {
+    margin-bottom: 20px; /* Add spacing between forms */
+}
+
+
+label {
+    display: block;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 3px;
+    color: #4d4747;
+    font-weight: 500; 
+    font-size: 0.7em;
+    font-weight: bold;
+    
+}
+
+
+#output {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #333;
+    color: #4d4747;
+    font-weight: 500; 
+    font-size: 0.7em;
+    font-weight: bold;
+}
+
+/*------------*/
+#items {
+    margin-top: 20px;
+}
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: 0.7em; 
+    
+}
+th, td {
+    padding: 5px;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+    font-family: "Poppins", sans-serif; 
+    font-style: normal;
+    
+}
+
+th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+}
+
+th a {
+    color: #333;
+    text-decoration: none;
+}
+
+th a:hover {
+    text-decoration: none;
+}
+
+/*--------*/
+.divider-container {
+    display: flex;
+    justify-content: center; /* Center the divider horizontally */
+}
+
+.divider {
+    height: 2px; /* Set the default height of the divider */
+    background-color: #333; /* Set the background color */
+    margin: 20px auto; /* Add some margin for spacing and center the divider horizontally */
+    width: 40%; /* Set the default width of the divider */
+}
+
+
+a {
+    color: #000000;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #867b7b;
+}
+
+
+/* THIs was for a button that i deleted
+.button {
+    margin-top: 20px;
+    text-align: center;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--green1);
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.button:hover {
+    background-color: var(--pink1);
+    color:#e0e0e0
+}*/
+
+
+/*------------*/
+
+
+.checkout button[type="submit"] {
+    margin-top: 20px;
+    text-align: center;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--green5);
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.checkout button[type="submit"]:hover {
+    background-color: var(--green4);
+}
+
+.remove_checkout button[type="submit"] {
+    margin-top: 10px;
+    text-align: center;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--pink2); 
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.remove_checkout button[type="submit"]:hover {
+    background-color: var(--pink1); 
+}
+
+
+#currency_conversion select {
+    width: 25%;
+    padding: 12px 32px 12px 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #f2f2f2;
+    color: #333;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    position: relative; /* Posição relativa para o posicionamento abosluto da seta SEE LATER*/
+}
+
+/* ter seta para baixo AINDA NAO ESTÁ A FUNCIONAR!!!!!! */
+#currency_conversion select::after {
+    content: ''; /* Empty content VER MELHOR */
+    position: absolute;
+    top: calc(50% - 6px); /* Ajustar posição vertical da seta */
+    right: 12px; /* Ajustar distancia from the right */
+    width: 12px; 
+    height: 12px; 
+    background-image: url('/ltw-project-2024-ltw14g02/images/arrow_down.png'); 
+    background-repeat: no-repeat;
+    background-size: contain; /* Ajustar depois que ainda nao esta a funcionaer */
+}
+
+/*focado, mas ver se é essencial ter focus */
+#currency_conversion select:focus {
+    outline: none;
+    border: 1px solid var(--green1);
+    box-shadow: 0 0 5px var(--green1);
+}
+
+/* quando clico */
+#currency_conversion select:hover {
+    background-color: var(--green1);
+}

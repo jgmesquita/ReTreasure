@@ -7,8 +7,6 @@ div {
     padding: 10px; 
     overflow-y: auto; /* Enable vertical scrolling if content exceeds height */
     /* The value of overflow-y can also be set to 'scroll' to force a scrollbar regardless of content height */
-    
-
 }
 
 /*  unordered list */

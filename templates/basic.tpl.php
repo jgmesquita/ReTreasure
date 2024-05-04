@@ -8,6 +8,7 @@
   require_once(__DIR__ . '/../database/user.db.php');
 ?>
 
+
 <?php function drawMenu(string $title,PDO $dbh) { ?>
   <!DOCTYPE html>
   <html lang="en-US">
@@ -38,7 +39,6 @@
     </div>
   </body>
 <?php } ?>
-
 
 
 <?php function drawHeader(Session $session, string $title, PDO $dbh) { ?>
@@ -125,6 +125,10 @@
 <?php } ?>
 
 <?php function drawLogoutForm(Session $session) { ?>
+  <head>
+    <link rel="stylesheet" href="/css/logout.css">
+  </head>
+
   <form action="/actions/action_logout.php" method="post" class="logout">
     <a href="/pages/profile.php"><?=htmlentities($session->getId())?></a>
     <button type="submit">Logout</button>

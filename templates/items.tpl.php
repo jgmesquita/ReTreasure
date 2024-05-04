@@ -88,6 +88,13 @@
 
 
 <?php function drawListItems(PDO $dbh, array $items) { ?>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+        <link rel="stylesheet" type="text/css" href="/css/checkoutItem.css">
+        <link rel="stylesheet" type="text/css" href="/css/header.css">
+        
+
+    </head>
     <section id="items">
         <table>
             <tr>
@@ -123,10 +130,15 @@
         <?php } ?>
         </table>
     </section>
-    <a href="/pages/profile.php">Back</a>
+    <a href="/pages/profile.php" >Back</a>
+
 <?php } ?>
 
 <?php function drawListedItems(PDO $dbh, array $items) { ?>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/css/checkoutItem.css">
+    </head>    
+
     <section id="items">
         <table>
             <tr>
@@ -173,7 +185,8 @@
         <?php } ?>
         </table>
     </section>
-    <a href="/pages/profile.php">Back</a>
+    <a href="/pages/profile.php" class="button">Back</a>
+    
 <?php } ?>
 
 <?php function drawRegisterItemForm(PDO $dbh) { ?>
@@ -281,7 +294,14 @@
 <?php } ?>
 
 <?php function drawCheckout(PDO $dbh, int $total, int $quantity) { ?>
-    <p>Your order has a total of <?= $total?> items and the cost is <?=$quantity?>&#8364!</p>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+        <link rel="stylesheet" type="text/css" href="/css/checkoutItem.css">
+        <link rel="stylesheet" type="text/css" href="/css/header.css">
+        
+
+    </head>
+   
     <input type="hidden" name="cost" value = <?=$quantity?>>
     <label>Change currency:</label>
     <section id="currency_conversion">
@@ -294,6 +314,13 @@
         </select>
     </section>
     <div id="output">Selected Currency: None</div>
+    <div class="divider"></div>
+    
+    <!--<p>Your order has a total of <?= $total?> items and the cost is <?=$quantity?>&#8364!</p>-->
+
+    <p>TOTAL &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?= $total ?> items &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <?= $quantity ?>&#8364;!</p>
+
+    
     <form action="/actions/action_checkout.php" method="post" class="checkout">
         <button type="submit">Checkout</button>
     </form>
