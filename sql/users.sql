@@ -65,9 +65,26 @@ CREATE TABLE buy(
     FOREIGN KEY (user) REFERENCES users(username)
 );
 
+--aaaa--
+DROP TABLE IF EXISTS rate;
+
+CREATE TABLE rate(
+    id INTEGER,
+    user TEXT NOT NULL,
+    rate NUMBER,
+    --nRates INTEGER AUTO_INCREMENT,--
+    -- o rate tem de ser (rate * nRates + new_rate)/ nRates+1
+
+    PRIMARY KEY (id, user),
+    FOREIGN KEY (id) REFERENCES items(id),
+    FOREIGN KEY (user) REFERENCES users(username)
+);
+--a--
+
 DROP TABLE IF EXISTS sold;
 
 CREATE TABLE sold(
+    --transaction_id INTEGER PRIMARY KEY AUTOINCREMENT,--
     id INTEGER,
     user TEXT NOT NULL,
     PRIMARY KEY (id, user),

@@ -328,3 +328,64 @@
         <button type="submit">Remove All Items</button>
     </form>
 <?php } ?>
+
+
+<?php function drawStars() { ?>
+    <form action="/actions/action_rate_item.php" method="POST" id="rating-form">
+    <input type="hidden" name="item_id" value="<?= $item->id ?>">
+
+    <label>
+        <input type="radio" name="rating" value="1">
+        &#9733;
+    </label>
+    <label>
+        <input type="radio" name="rating" value="2">
+        &#9733;&#9733;
+    </label>
+    <label>
+        <input type="radio" name="rating" value="3">
+        &#9733;&#9733;&#9733;
+    </label>
+    <label>
+        <input type="radio" name="rating" value="4">
+        &#9733;&#9733;&#9733;&#9733;
+    </label>
+    <label>
+        <input type="radio" name="rating" value="5">
+        &#9733;&#9733;&#9733;&#9733;&#9733;
+    </label>
+
+    <!-- Submit button -->
+    <input type="submit" value="Submit Rating">
+</form>
+
+<?php } ?>
+
+<?php function drawReview(PDO $dbh, array $items) { ?>
+
+    <p> Your order has been processed successfully! </p>
+    <p> Thank you for shopping with us </p>
+
+    <p> Review your experience </p>
+
+    <section>
+        <?php foreach ($items as $item) { ?>
+                <h3><?=$item->category?></h3>
+                <p id="descriptionItem">Description: <?=htmlspecialchars($item->descriptionItem)?></p>
+                <p id="model">Model: <?=htmlspecialchars($item->model)?></p>
+                <p id="brand">Brand: <?=htmlspecialchars($item->brand)?></p>
+                <p id="price">Price: <?=$item->price?>&#8364</p>
+                <?php drawStars();?>
+
+
+        <?php } ?>
+        
+
+
+    </section>
+
+
+
+
+
+<?php } ?>
