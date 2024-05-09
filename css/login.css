@@ -1,0 +1,31 @@
+input[type="username"], input[type="password"] {
+    font-size: 15px; 
+    padding: 10px; 
+    margin-right: 180px;
+
+    border-radius: 10px; 
+    border: 1px solid black; 
+    background-color: white; 
+    width: 50%; 
+    margin-bottom: 10px;
+}
+
+input[type="username"],
+input[type="password"] {
+    font-size: 15px; 
+    padding: 8px; 
+    margin: 0 auto 10px; 
+    border-radius: 10px; 
+    border: 1px solid #ccc; 
+    background-color: #f9f9f9; 
+    width: 40%; 
+    box-sizing: border-box; 
+    display: block; 
+}
+
+input[type="username"]:hover,
+input[type="password"]:hover {
+    border-color: #999;
+}
+
+

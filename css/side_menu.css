@@ -1,0 +1,38 @@
+div {
+    position: fixed;
+    top: 20; /*pode é começar so deppois do header...*/
+    left: 0; 
+    height: 97%; 
+    width: 200px; 
+    padding: 10px; 
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds height */
+    /* The value of overflow-y can also be set to 'scroll' to force a scrollbar regardless of content height */
+}
+
+
+div ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+div li {
+    margin: 10px 0; 
+}
+
+
+div a {
+    text-decoration: none; 
+    color: #333; 
+    display: block; 
+    padding: 10px; 
+    background-color: white;
+    border-radius: 10px;
+    transition: background-color 0.3s; 
+}
+
+div a:hover {
+    background-color: var(--pink2); 
+    color: #fffafa;
+}
