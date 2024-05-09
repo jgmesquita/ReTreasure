@@ -1,9 +1,9 @@
 aside {
     position: fixed;
     top: 50%; 
-    right: 0;/*mete lado direito
+    right: 0;
     transform: translateY(-50%);/*centra direito*/
-    width: 8%; /* Adjust the width as per your preference */
+    width: 8%; 
     background-color: var(--green1);
     padding: 2em; 
     color: var(--green5);

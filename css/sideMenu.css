@@ -1,27 +1,26 @@
+/*ficheiro para tentar outro sidemenu que funcione, AINDA NAO FUNCIONA LOL*/
 .menu {
     position: fixed;
-    top: 60px; /* Assuming header height is 60px, adjust this value according to your header's height */
+    top: 60px; 
     left: 0;
-    height: calc(100% - 60px); /* Adjust this value based on the space you want between header and menu */
+    height: calc(100% - 60px); 
     width: 200px;
     padding: 10px;
-    overflow-y: auto; /* Enable vertical scrolling if content exceeds height */
-    /* The value of overflow-y can also be set to 'scroll' to force a scrollbar regardless of content height */
+    overflow-y: auto; 
 }
 
-/* unordered list */
+
 .menu ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
 
-/* list items */
+
 .menu li {
     margin: 10px 0;
 }
 
-/* links */
 .menu a {
     text-decoration: none;
     color: #333;

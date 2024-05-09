@@ -11,20 +11,17 @@
     border-radius: 999em;
     transition: background-color 0.3s ease;
     margin: 0 10px;
-    /* Add box shadow for a more pronounced button effect */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* Add a subtle hover effect */
     transition: transform 0.2s ease-in-out;
 }
 
-/* Add a hover effect */
 .logout button:hover {
     background-color: var(--green2);
     transform: translateY(-2px); 
 }
 
-/* Add a focus effect */
+
 .logout button:focus {
-    outline: none; /* Remove the default focus outline */
-    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2); /* Add a focus outline */
+    outline: none; 
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2); 
 }
