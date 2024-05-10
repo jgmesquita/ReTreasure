@@ -38,12 +38,13 @@ body {
     text-decoration: none;
     color: #ffffff;
     font-size: 1.4em;
+    font-weight: 600; 
     transition: all 0.3s ease;
-    background: linear-gradient(135deg, #c48897, #c8507a);
+    background: linear-gradient(135deg, var(--pink1), var(--pink2));
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 #profile a:hover {
     transform: translateY(-2px);
-    background: linear-gradient(135deg, #95c68e, #4a7058);
+    background: linear-gradient(135deg, var(--green2), var(--green4));
 }

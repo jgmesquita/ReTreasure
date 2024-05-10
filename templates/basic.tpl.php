@@ -181,6 +181,10 @@
 <?php } ?>
 
 <?php function drawChangeUsername() { ?>
+  <head>
+    <link rel="stylesheet" href="/css/change.css">
+  </head>
+
   <section id="change">
     <form action="/actions/action_change_username.php" method="post" class="change_username">
       <h4>Write the new username!</h4>
@@ -192,6 +196,10 @@
 <?php } ?>
 
 <?php function drawChangeName() { ?>
+  <head>
+    <link rel="stylesheet" href="/css/change.css">
+  </head>
+
   <section id="change">
     <form action="/actions/action_change_name.php" method="post" class="change_name">
       <h4>Write the new name!</h4>
@@ -204,6 +212,10 @@
 <?php } ?>
 
 <?php function drawChangeEmail() { ?>
+  <head>
+    <link rel="stylesheet" href="/css/change.css">
+  </head>
+
   <section id="change">
     <form action="/actions/action_change_email.php" method="post" class="change_name">
       <h4>Write the new email!</h4>
@@ -215,6 +227,10 @@
 <?php } ?>
 
 <?php function drawChangePassword() { ?>
+  <head>
+    <link rel="stylesheet" href="/css/change.css">
+  </head>
+  
   <section id="change">
     <form action="/actions/action_change_password.php" method="post" class="change_name">
       <h4>Write the new password!</h4>
@@ -226,6 +242,9 @@
 <?php } ?>
 
 <?php function drawOptionsProfile() { ?>
+  <head>
+    <link rel="stylesheet" href="/css/editProfile.css">
+  </head>
   <section id="options">
     <h3>Select which detail you wanna change!</h3>
     <a href="/pages/change_username.php">Change your username!</a>
