@@ -2,10 +2,8 @@
 
 body {
     text-align: center;
-    font-family: 'Questrial', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
-
-
 
 table {
     margin-left: auto;
@@ -50,7 +48,6 @@ table {
   
   }
   
-
   body {
     background-color: var(--white2);
   }

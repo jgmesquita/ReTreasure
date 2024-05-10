@@ -33,6 +33,6 @@ div a {
 }
 
 div a:hover {
-    background-color: var(--pink2); 
+    background-color: var(--pink1); 
     color: #fffafa;
 }

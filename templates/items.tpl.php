@@ -285,6 +285,9 @@
 <?php } ?>
 
 <?php function drawSearchArea() { ?>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/css/searchItem.css">
+    </head>
   <section id="search">
     <label>Search an item by writting its description:</label>
     <input type="text">

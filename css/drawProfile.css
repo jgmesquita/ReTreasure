@@ -1,46 +1,49 @@
 body {
     font-family: "Poppins", sans-serif;
     max-width: 80%;
-    margin: 0 auto; 
+    margin: 0 auto;
+    padding-top: 50px; 
 }
 
 #profile {
-    padding: 30px;
-    background-color: #ffffff;
+    padding: 50px;
+    background-color: #f9f9f9; 
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 #profile h3 {
     margin-bottom: 20px;
-    font-size: 2.8em;
+    font-size: 3.5em; 
+    font-weight: 700;
     color: #333333;
 }
 
 #profile h4 {
-    margin-bottom: 15px;
-    font-size: 2em;
-    color: #666666;
+    margin-bottom: 20px; 
+    font-size: 1.8em; 
+    font-weight: 600; 
+    color: #555555; 
 }
 
 #profile span {
     display: block;
-    margin-bottom: 40px;
+    margin-bottom: 30px; 
 }
 
 #profile a {
     display: inline-block;
     padding: 15px 30px;
-    background: linear-gradient(135deg, #cc7e92, #b6a899);
     border-radius: 25px;
     text-decoration: none;
     color: #ffffff;
     font-size: 1.4em;
     transition: all 0.3s ease;
+    background: linear-gradient(135deg, #c48897, #c8507a);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 #profile a:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(135deg, #91c48a, #54ab72);
+    background: linear-gradient(135deg, #95c68e, #4a7058);
 }

@@ -15,7 +15,6 @@
     <title><?=$title?></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/side_menu.css"> 
 
     <script src="/javascript/search.js" defer></script>
@@ -99,6 +98,13 @@
 
 
 <?php function drawFooter() { ?>
+  <head>
+    <title><?=$title?></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/footer.css">
+    <script src="/javascript/search.js" defer></script>
+  </head>
     </main>
     <footer>
       ReTreasure &copy; 2024

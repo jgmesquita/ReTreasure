@@ -7,7 +7,7 @@ aside {
     background-color: var(--green1);
     padding: 2em; 
     color: var(--green5);
-    font-size: 0.001em; 
+    font-size: 0.0001em; 
     box-shadow: 0 0 10px var(--green2); 
     z-index: 100; /* Ter a certeza que fica em cima de outras cenas */
 }
