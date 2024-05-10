@@ -129,6 +129,14 @@
 <?php } ?>
 
 <?php function drawRegisterForm() { ?>
+  <head>
+    <title><?=$title?></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/register.css">
+    <script src="/javascript/search.js" defer></script>
+  </head>
+
   <section id="register">
   <h2>Register</h2>
   <h3>Fill out the following form to participate in our shop!</h3>
@@ -230,7 +238,7 @@
   <head>
     <link rel="stylesheet" href="/css/change.css">
   </head>
-  
+
   <section id="change">
     <form action="/actions/action_change_password.php" method="post" class="change_name">
       <h4>Write the new password!</h4>
