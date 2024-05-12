@@ -16,7 +16,7 @@
 }
 
 .logout button:hover {
-    background-color: var(--green2);
+    background-color: var(--green5);
     transform: translateY(-2px); 
 }
 
