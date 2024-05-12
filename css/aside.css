@@ -1,13 +1,33 @@
 aside {
     position: fixed;
-    top: 50%; 
+    bottom: 0; /* Position the aside at the bottom of the viewport */
     right: 0;
-    transform: translateY(-50%);/*centra direito*/
+    transform: translateY(100%); /* Initially hide the aside off-screen */
     width: 8%; 
     background-color: var(--green1);
     padding: 2em; 
     color: var(--green5);
-    font-size: 0.0001em; 
+    font-size: 16px; /* Adjust the font size as needed */
     box-shadow: 0 0 10px var(--green2); 
-    z-index: 100; /* Ter a certeza que fica em cima de outras cenas */
+    z-index: 100; /* Ensure it stays on top of other elements */
+    transition: transform 0.3s ease; /* Add a transition effect */
+}
+
+.show-aside {
+    transform: translateY(0); /* Move the aside into view */
+}
+
+button {
+    padding: 10px 20px;
+    font-weight: bold;
+    background-color:var(--pink1);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Add a transition effect */
+}
+
+button:hover {
+    background-color: var(--pink2);
 }

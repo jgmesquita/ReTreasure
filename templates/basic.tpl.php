@@ -55,6 +55,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
 
     <script src="/javascript/search.js" defer></script>
+    <script src="/javascript/appear_dis.js" defer></script>
   </head>
   <body>
     <header>
@@ -68,6 +69,7 @@
         else drawLoginForm();
       ?>
     </header>
+    <button type="show" onclick="toggleAside()">Show Summary</button>
     <aside>At ReTreasure, we believe that every item has a story and a journey, and it shouldn't end just because it's no longer brand new. Our platform is the premier online destination for buying and selling high-quality, pre-loved items, ranging from fashion and furniture to electronics and toys. Come checkout our amazings sellers! You can join us in our mission to create a better world!
     </aside>
     <main>
