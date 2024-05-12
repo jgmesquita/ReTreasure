@@ -184,3 +184,7 @@ INSERT INTO items VALUES (8, 'jgmesquita', 'Roupa - Camisola','camisola', 'S', '
 INSERT INTO items VALUES (9, 'jgmesquita', 'Roupa - Camisola','camisola', 'S', 'c', 30, 'brand', 'model', 'new', '/images/path.png');
 INSERT INTO items VALUES (10, 'jgmesquita','Roupa - Camisola', 'camisola', 'S', 'c', 40, 'brand', 'model', 'new', '/images/path.png');
 INSERT INTO comment VALUES(1,1, 'user1', 'What is the price?');
+
+--INSERT INTO reply (id, idComment, user, texto) VALUES (1, 1, 'user1', 'Reply text');
+
+--DELETE FROM reply WHERE user = tati;

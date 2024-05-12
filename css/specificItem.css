@@ -1,0 +1,93 @@
+#item {
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#item h3 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+#item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+#specific p {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: #666666;
+}
+
+#specific #descriptionItem {
+    font-weight: bold;
+}
+
+#specific #price {
+    font-weight: bold;
+    color: #9a277f; 
+}
+
+#addcomment, #wb {
+    margin-top: 30px;
+}
+
+#addcomment h3, #wb h3 {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 15px;
+}
+
+.comment, .wishlist, .buy {
+    margin-top: 15px;
+}
+
+.comment input[type="text"] {
+    width: 50% ;
+    padding: 15px;
+    border-radius: 30px;
+    border: 2px solid #ccc;
+    margin-right: 10px;
+    font-weight: 700;
+}
+
+.comment button, .wishlist button, .buy button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    background-color: #6a6969;
+    color: #ffffff;
+    font-size: 1.2em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.wishlist button{
+    background-color: rgb(196, 78, 108);
+}
+
+.buy button{
+    background-color: var(--green4);
+}
+
+.comment button:hover,.buy button:hover {
+    background-color: #444;
+}
+
+.wishlist button:hover{
+    background-color: var(--pink2);
+}
+.buy button:hover{
+    background-color: var(--green5);
+}

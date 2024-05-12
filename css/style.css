@@ -34,11 +34,12 @@ table {
 :root {
     --white1: #FFFEF5;
     --white2: #FBF7F4;
+    --white3: #FFFFFF;
     --green1: #EAEEEB;
     --green2: #BECBC0;
     --green3: #A7B9AB;
     --green4: #738D79;
-    --green5: #223126;
+    --green5: #284730;
     --pink1: #DC839B;
     --pink2: #A62048;
   
@@ -49,7 +50,7 @@ table {
   }
   
   body {
-    background-color: var(--white2);
+    background-color: var(--white3);
   }
   
 /*-----

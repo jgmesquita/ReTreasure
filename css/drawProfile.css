@@ -1,9 +1,14 @@
 body {
     font-family: "Poppins", sans-serif;
-    max-width: 80%;
+    max-width: 95%; 
     margin: 0 auto;
     padding-top: 50px; 
+    display: flex; /*VER MELHOR como quero*/
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
 }
+
 
 #profile {
     padding: 50px;

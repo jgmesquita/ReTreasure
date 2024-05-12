@@ -11,27 +11,35 @@
 ?>
 
 <?php function drawItems(PDO $dbh, array $items) { ?>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/css/latestItems.css">
+    </head>
     <section id="items">
         <h3>Our latest items!</h3>
         <?php foreach ($items as $item) { ?>
             <?php if (!is_sold($dbh, $item->id)) { ?>
             <article>
                 <h3><?=$item->category?></h3>
-                <img src="<?=$item->imagePath?>"><br>
-                <section id="description">
-                    <a href="/pages/item.php?id=<?=$item->id?>">Link</a>
-                    <p id="descriptionItem">Description: <?=htmlspecialchars($item->descriptionItem)?></p>
-                    <p id="model">Model: <?=htmlspecialchars($item->model)?></p>
-                    <p id="brand">Brand: <?=htmlspecialchars($item->brand)?></p>
-                    <p id="price">Price: <?=$item->price?>&#8364</p>
-                </section>
+                <a href="/pages/item.php?id=<?=$item->id?>">
+                    <img src="<?=$item->imagePath?>"><br>
+                    <section id="description">
+                        <p id="descriptionItem">Description: <?=htmlspecialchars($item->descriptionItem)?></p>
+                        <p id="model">Model: <?=htmlspecialchars($item->model)?></p>
+                        <p id="brand">Brand: <?=htmlspecialchars($item->brand)?></p>
+                        <p id="price">Price: <?=$item->price?>&#8364</p>
+                    </section>
+                </a>
             </article>
             <?php } ?>
         <?php } ?>
     </section>
 <?php } ?>
 
+
 <?php function drawItem(PDO $dbh, Item $item, array $comments) { ?>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/css/specificItem.css">
+    </head>
     <section id="item">
         <h3><?=$item->category?></h3>
         <img src=<?=$item->imagePath?>>
@@ -101,12 +109,6 @@
 
 
 <?php function drawListItems(PDO $dbh, array $items) { ?>
-    <head>
-        <link rel="stylesheet" type="text/css" href="/css/style.css">
-        <link rel="stylesheet" type="text/css" href="/css/checkoutItem.css">
-        <link rel="stylesheet" type="text/css" href="/css/header.css">
-    </head>
-
     <section id="items">
         <h3>There is the list you requested!</h3>
         <table>
@@ -318,10 +320,11 @@
         <link rel="stylesheet" type="text/css" href="/css/checkoutItem.css">
         <link rel="stylesheet" type="text/css" href="/css/header.css">
     </head>
-
-    <section id="details">Your order has a total of <?= $total?> items and the cost is <?=$quantity?>&#8364!</section>
-    <input type="hidden" name="cost" value = <?=$quantity?>>
-    <section id="currency_conversion">
+    
+    <section id=retangulo>
+        <section id="details">Your order has a total of <?= $total?> items and the cost is <?=$quantity?>&#8364!</section>
+        <input type="hidden" name="cost" value = <?=$quantity?>>
+        <section id="currency_conversion">
         <div class="divider"></div>
         <label>Change currency:</label>
         <select name="currency" id="currency" onchange="displayCurrency()">
@@ -332,10 +335,11 @@
             <option value="GBP">GBP</option>
         </select>
 
-    <div id="output">Selected Currency: None</div>
+        <div id="output">Selected Currency: None</div>
 
 
-    </section>
+        </section>
+   
     <section id="actions">
     <form action="/actions/action_checkout.php" method="post" class="checkout">
         <button type="submit" id="checkout">Checkout</button>
@@ -343,5 +347,6 @@
     <form action="/actions/action_remove_all_items_checkout.php" method="post" class="remove_checkout">
         <button type="submit">Remove All Items</button>
     </form>
+    </section>
     </section>
 <?php } ?>

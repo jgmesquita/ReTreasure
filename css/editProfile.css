@@ -1,7 +1,17 @@
 /* VER MELHOR COMO QUERO METER */
 html, body {
-    height: 100%;
+    /*height: 100%;
     display: flex;
+      flex-direction: column;
+  justify-content: center; 
+    align-items: center; */
+
+   
+    max-width: 95%; 
+    margin: 0 auto;
+    padding-top: 50px; 
+    display: flex; /*VER MELHOR como quero*/
+    flex-direction: column;
     justify-content: center; 
     align-items: center; 
 }
@@ -12,7 +22,7 @@ html, body {
     border-radius: 15px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
-    max-width: 60%;
+    max-width: 100%;
     margin: 15px auto; /* Center horiontalmente */ 
 }
 

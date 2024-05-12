@@ -2,7 +2,6 @@ input[type="username"], input[type="password"] {
     font-size: 15px; 
     padding: 10px; 
     margin-right: 180px;
-
     border-radius: 10px; 
     border: 1px solid black; 
     background-color: white; 

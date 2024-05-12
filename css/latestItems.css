@@ -1,0 +1,72 @@
+/*
+#items {
+    padding: 30px;
+    background-color: #f9f9f9; 
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    max-width: 1500px; 
+    margin: 0 auto; 
+}*/
+
+#items h3 {
+    margin-bottom: 30px;
+    font-size: 3em;
+    font-weight: 700;
+    color: #333333; 
+}
+
+#items article {
+    padding: 30px;
+    background-color: #ffffff; 
+    border-radius: 15px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 60px;
+    transition: transform 0.3s;
+}
+
+#items article:hover {
+    transform: scale(1.05); 
+}
+
+#items article h3 {
+    font-size: 1.5em;
+    color: #666666;
+}
+
+#items article img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+#items article a {
+    display: block; /* Meter o link a ser block element */
+    text-decoration: none; 
+    color: inherit; 
+
+}
+#items article a:hover {
+    text-decoration: none;
+    color: inherit; 
+}
+
+#items article #description {
+    cursor: pointer; /* Mudar cursor dizer que é clickable */
+}
+
+#items article #description p {
+    margin-bottom: 10px;
+    color: #333333; 
+}
+
+#items article #description #descriptionItem {
+    font-weight: bold;
+}
+
+#items article #description #price {
+    font-weight: bold;
+    color: #b34382; 
+}
