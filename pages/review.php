@@ -21,9 +21,15 @@ $dbh = get_database_connection();
 
 if (isset($_SESSION['username'])) {
 
-    $soldItems = check_sold_items($dbh, $_SESSION['username']);
+    //$soldItems = check_sold_items($dbh, $_SESSION['username']);
+    $checkoutItems = check_checkout_items($dbh, $_SESSION['username']);
+    if (empty($checkoutItems)) {
+      //ou botao go back no items for checjout 
+      header("Location: index.php");
+      exit();
+    }
     drawHeader($session, 'Amazon LTW Shop', $dbh);
-    drawReview($dbh, $soldItems);
+    drawReview($dbh, $checkoutItems);
     drawFooter();
   }
 

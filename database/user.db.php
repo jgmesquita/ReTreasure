@@ -206,6 +206,16 @@ function add_sold(PDO $dbh, string $username) : void
   }
 }
 
+function add_sold_nrm(PDO $dbh, string $username, array $items) :void 
+{
+  foreach ($items as $item) {
+    $stmt = $dbh->prepare('INSERT INTO sold VALUES (?, ?)');
+    $stmt->execute(array($item->id, $username));
+    remove_checkout($dbh, $username, $item->id);
+    remove_wishlist($dbh, $username, $item->id);
+  }
+}
+
 function calculate_checkout_metrics(array $items) : array
 {
   $quantity = 0;

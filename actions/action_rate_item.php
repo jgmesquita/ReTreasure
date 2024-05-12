@@ -8,11 +8,6 @@ require_once('../database/user.db.php');
 
 $dbh = get_database_connection();
 
-
-
-//header('Location: /pages/item.php?id=' . $_SESSION['id']);
-
-
 $itemId = filter_input(INPUT_POST, 'item_id', FILTER_SANITIZE_NUMBER_INT);
 $rating = filter_input(INPUT_POST, 'rating', FILTER_SANITIZE_NUMBER_INT);
 

@@ -10,6 +10,6 @@ require_once(__DIR__ . '/../database/item.class.php');
 
 $dbh = get_database_connection();
 
-add_sold($dbh, $_SESSION['username']);
+//add_sold($dbh, $_SESSION['username']);
 
-header('Location: /pages/index.php');
+header('Location: /pages/review.php');

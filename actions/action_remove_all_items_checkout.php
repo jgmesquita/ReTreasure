@@ -10,6 +10,8 @@ require_once(__DIR__ . '/../database/item.class.php');
 
 $dbh = get_database_connection();
 
+add_sold($dbh, $_SESSION['username']);
+
 remove_all_items_checkout($dbh, $_SESSION['username']);
 
 header('Location: /pages/index.php');

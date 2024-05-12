@@ -322,11 +322,11 @@
 
     
     <form action="/actions/action_checkout.php" method="post" class="checkout">
-        <button type="submit">Checkout</button>
+        <button type="submit">Continue</button>
     </form>
-    <form action="/actions/action_remove_all_items_checkout.php" method="post" class="remove_checkout">
+    <!--<form action="/actions/action_remove_all_items_checkout.php" method="post" class="remove_checkout">
         <button type="submit">Remove All Items</button>
-    </form>
+    </form>-->
 <?php } ?>
 
 
@@ -355,7 +355,6 @@
         &#9733;&#9733;&#9733;&#9733;&#9733;
     </label>
 
-    <!-- Submit button -->
     <input type="submit" value="Submit Rating">
 </form>
 
@@ -368,6 +367,8 @@
 
     <p> Review your experience </p>
 
+    <a href="checkout.php"> <button> Back </button> </a>
+
     <section>
         <?php foreach ($items as $item) { ?>
                 <h3><?=$item->category?></h3>
@@ -379,13 +380,9 @@
 
 
         <?php } ?>
-        
 
-
+        <form action="/actions/action_remove_all_items_checkout.php" method="post" class="remove_checkout">
+        <button type="submit">Checkout</button>
+        </form>
     </section>
-
-
-
-
-
 <?php } ?>
