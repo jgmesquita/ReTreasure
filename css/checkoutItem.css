@@ -49,7 +49,6 @@ label {
     margin-top: 20px;
 }
 
-
 table {
     width: 80%;
     border-collapse: collapse;
@@ -74,7 +73,6 @@ th a {
     text-decoration: none;
 }
 
-
 /*--------*/
 .divider-container {
     display: flex;
@@ -88,49 +86,68 @@ th a {
     width: 40%; 
 }
 
-
-a {
-    color: #000000;
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 20px;
-    font-weight: bold;
+/*----header choices----*/
+#links {
+    background-color: #f2f2f2; 
+    padding: 10px; 
+    text-align: center; 
+    width: 50%; 
+    margin: 0 auto; 
+    border-radius: 30px; 
+    font-weight:800; 
 }
 
-/*para o´back´button e o resto, nao percebi porque nao era no logoutFomr tbh*/
-a:hover {
-    text-decoration: none;
-    color: #867b7b;
+#links a {
+    display: inline-block; 
+    padding: 8px 16px; 
+    margin: 0 5px; 
+
+    
+    color: rgb(0, 0, 0);
+    text-decoration: none; 
+    border-radius: 30px; 
+}
+
+#links a:hover {
+    background-color: #ffffff; 
+    color:var(--green4); 
 }
 
 
-
-
-/* THIs was for a button that i deleted
-.button {
-    margin-top: 20px;
-    text-align: center;
-    padding: 15px 30px;
-    font-size: 18px;
-    font-weight: bold;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: var(--green1);
-    color: #fff;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+/*BACK BUTTON*/
+.back_special {
+    position: relative;
+    padding: 20px 40px; 
+    color: #333; 
+    text-decoration: none; 
+    font-weight: 700;
+    display: inline-block; 
+    margin: 20px 0; 
+    background-color: #f2f2f2; 
+    border-radius: 50px; 
+    overflow: hidden;
 }
 
-.button:hover {
-    background-color: var(--pink1);
-    color:#e0e0e0
-}*/
+.back_special::before {
+    content: ''; 
+    position: absolute;
+    left: 20px; 
+    top: 50%;
+    transform: translateY(-50%) rotate(0deg); 
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid transparent; 
+    border-left: 2px solid transparent; 
+    transition: transform 0.3s ease, border-top 0.3s ease, border-left 0.3s ease; 
+}
 
+.back_special:hover::before {
+    transform: translate(-3px, -50%) rotate(-45deg); 
+    border-top: 2px solid #333; 
+    border-left: 2px solid #333; 
+}
 
-/*------------*/
-
-
+/*-------------*/
 .checkout button[type="submit"] {
     margin-top: 20px;
     text-align: center;
@@ -171,7 +188,6 @@ a:hover {
     background-color: var(--pink1); 
 }
 
-
 #currency_conversion select {
     width: 25%;
     padding: 12px 32px 12px 12px;
@@ -211,9 +227,6 @@ a:hover {
 #currency_conversion select:hover {
     background-color: var(--green1);
 }
-
-
-
 /*------------*/
 
 #retangulo {

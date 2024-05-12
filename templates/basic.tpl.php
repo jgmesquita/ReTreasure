@@ -69,7 +69,7 @@
         else drawLoginForm();
       ?>
     </header>
-    <button type="show" onclick="toggleAside()">OUR PURPOSE</button>
+    <button type="show" onclick="toggleAside()">Our Purpose</button>
     <aside>At ReTreasure, we believe that every item has a story and a journey, and it shouldn't end just because it's no longer brand new. Our platform is the premier online destination for buying and selling high-quality, pre-loved items, ranging from fashion and furniture to electronics and toys. Come checkout our amazings sellers! You can join us in our mission to create a better world!
     </aside>
     <main>
