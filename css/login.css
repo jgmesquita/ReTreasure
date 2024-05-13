@@ -10,16 +10,19 @@ input[type="username"], input[type="password"] {
 }
 
 input[type="username"],
-input[type="password"] {
-    font-size: 15px; 
-    padding: 8px; 
+input[type="password"] {  
     margin: 0 auto 10px; 
-    border-radius: 10px; 
     border: 1px solid #ccc; 
     background-color: #f9f9f9; 
-    width: 40%; 
     box-sizing: border-box; 
     display: block; 
+    width: 40%;
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: px;
+    font-size: 1em;
+    font-weight: 600;
+    border-radius: 20px;
 }
 
 input[type="username"]:hover,

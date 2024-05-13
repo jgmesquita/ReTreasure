@@ -84,7 +84,8 @@ th a {
 
 /*----header choices----*/
 #links {
-    background-color: #f2f2f2; 
+    background-color: #f2f2f2; /*indecisa entre que cor*/
+   /*background: linear-gradient(135deg, var(--white3),var(--green1), var(--white3));*/
     padding: 10px; 
     text-align: center; 
     width: 40%; 
