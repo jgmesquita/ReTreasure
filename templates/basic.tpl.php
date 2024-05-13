@@ -71,13 +71,13 @@
         <h1><a href="/">ReTreasure</a></h1>
         <h2>Rediscover Treasures</h2>
         <h3>Where Pre-Loved Finds New Love!</h3>
+        <button type="show" onclick="toggleAside()">Our Purpose</button>
       </div>
       <?php 
         if ($session->isLoggedIn()) drawLogoutForm($session);
         else drawLoginForm();
       ?>
     </header>
-    <button type="show" onclick="toggleAside()">Our Purpose</button>
     <aside>At ReTreasure, we believe that every item has a story and a journey, and it shouldn't end just because it's no longer brand new. Our platform is the premier online destination for buying and selling high-quality, pre-loved items, ranging from fashion and furniture to electronics and toys. Come checkout our amazings sellers! You can join us in our mission to create a better world!
     </aside>
     <main>
@@ -185,8 +185,8 @@
 
   <form action="/actions/action_logout.php" method="post" class="logout">
     <article id="hamburger">
-      <label class="burger" for="burger">&#8801;</label>
-      <input type="checkbox" id="burger">
+      <!-- <label class="burger" for="burger">&#8801;</label>
+      <input type="checkbox" id="burger">  -->
         <section id="links">
           <a href="/pages/profile.php"><?="Welcome, " . htmlentities($session->getId()) . "!"?></a>
           <a href="/pages/search.php">Search</a>
