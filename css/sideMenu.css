@@ -1,5 +1,6 @@
 /*ficheiro para tentar outro sidemenu que funcione, AINDA NAO consegui*/
-.menu {
+/*  THE BASE MENU THAT ITS WORKING! sem o header tar igual!!!!!!!
+.side {
     position: fixed;
     top: 60px; 
     left: 0;
@@ -10,18 +11,18 @@
 }
 
 
-.menu ul {
+.side ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
 
 
-.menu li {
+.side li {
     margin: 10px 0;
 }
 
-.menu a {
+.side a {
     text-decoration: none;
     color: #333;
     display: block;
@@ -31,7 +32,67 @@
     transition: background-color 0.3s;
 }
 
-.menu a:hover {
+.side a:hover {
     background-color: var(--pink2);
+    color: #fffafa;
+}
+*/
+
+/*-----*/
+.sidebar-wrapper {
+    position: fixed;
+    top: 0;
+    left: -300px; 
+    background-color: #f2f2f2;
+    background: linear-gradient(135deg, var(--green1), var(--green2));
+    transition: left 0.3s ease; 
+    top: 100px;  
+    height: calc(100% - 550px); 
+    width: 200px;
+    padding: 20px;
+    overflow-y: auto;
+    border-radius: 20px; 
+   
+}
+
+.menu_button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: #f2f2f2;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.menu_button:hover {
+    background-color: var(--green4);
+}
+
+.side ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side li {
+    margin: 10px 0;
+}
+
+.side a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+.side a:hover {
+    background-color: var(--green4);
     color: #fffafa;
 }

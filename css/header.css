@@ -58,7 +58,7 @@ h1 {
     color: #333; 
     margin-bottom: 0px;
     letter-spacing: -0.5px; 
-    font-size: 1.9em; 
+    font-size: 2.9em; 
     text-align: center; 
 }
 h1 a { 
@@ -85,7 +85,6 @@ h1 a:hover {
     font-size: 1.1em; 
 }
 
-
 h2{
     font-family: "Poppins", sans-serif;
     font-weight: 650;
@@ -97,14 +96,12 @@ h2{
     text-align: left;
     margin-top: 0;
     margin-bottom: 0;
-   
 }
 
 
 h3 {
     margin-bottom: 5px;
     font-family: "Poppins", sans-serif;
-    font-weight: 500;
     font-style: normal;
     font-size: 0.01em; 
     text-align: center;

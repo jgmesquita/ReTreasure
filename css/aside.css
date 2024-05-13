@@ -8,7 +8,7 @@ aside {
     padding: 2em; 
     color: var(--green5);
     font-size: 16px; 
-    font-weight: 700;
+    font-weight: 600;
     box-shadow: 0 0 10px var(--green2); 
     z-index: 100; /* certeza que fica por cima dos outros elem.*/
     transition: transform 0.3s ease; 

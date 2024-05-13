@@ -90,6 +90,7 @@ th a {
     width: 40%; 
     margin: 0 auto; 
     border-radius: 30px; 
+    font-weight: 700;
 }
 
 #links a {

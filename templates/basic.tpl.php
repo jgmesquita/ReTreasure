@@ -8,36 +8,44 @@
   require_once(__DIR__ . '/../database/user.db.php');
 ?>
 
-<?php function drawMenu(string $title,PDO $dbh) { ?>
+<?php function drawMenu(string $title, PDO $dbh) { ?>
   <!DOCTYPE html>
   <html lang="en-US">
   <head>
-    <title><?=$title?></title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/side_menu.css"> 
-
-    <script src="/javascript/search.js" defer></script>
+      <title><?= $title ?></title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="/css/style.css">
+      <link rel="stylesheet" href="/css/sideMenu.css">
+      <link rel="stylesheet" href="/css/header.css">
+      <script src="/javascript/search.js" defer></script>
+      <script src="/javascript/sideb.js" defer></script>
   </head>
   <body>
-    <div class="menu>">
-      <h4>MENU</h4>
-      <ul>
-        <?php
-          $categories = get_all_categories($dbh);
-          foreach($categories as $category){
-            $parts = explode('-', $category);
-            ?>
-            <li>
-            <a href="items_by_category.php?category=<?=($category) ?>">
-              <?= $parts[1] ?>
-              </a>
-            </li>
-          <?php } ?>    
-      </ul>
-    </div>
+      <button class="menu_button" onclick="toggleMenu()">=</button>
+      <div class="sidebar-wrapper" id="sidebar">
+          <div class="side">
+              <h4>MENU</h4>
+              <ul>
+                  <?php
+                  $categories = get_all_categories($dbh);
+                  foreach ($categories as $category) {
+                      $parts = explode('-', $category);
+                      ?>
+                      <li>
+                          <a href="items_by_category.php?category=<?= ($category) ?>">
+                              <?= $parts[1] ?>
+                          </a>
+                      </li>
+                  <?php } ?>
+              </ul>
+          </div>
+      </div>
   </body>
+  </html>
 <?php } ?>
+
+
 
 <?php function drawHeader(Session $session, string $title, PDO $dbh) { ?>
 <!DOCTYPE html>
