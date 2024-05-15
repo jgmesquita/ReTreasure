@@ -8,14 +8,21 @@ require_once('../database/user.db.php');
 
 $dbh = get_database_connection();
 
+
 $itemId = filter_input(INPUT_POST, 'item_id', FILTER_SANITIZE_NUMBER_INT);
 $rating = filter_input(INPUT_POST, 'rating', FILTER_SANITIZE_NUMBER_INT);
 
 if ($itemId && $rating) {
-    $dbh = get_database_connection();
+    $stmt = $dbh->prepare('SELECT COUNT(*) FROM rate WHERE id = ? AND user = ?');
+    $stmt->execute([$itemId, $_SESSION['id']]);
+    $count = $stmt->fetchColumn();
 
-    $stmt = $pdo->prepare('INSERT INTO ratings (item_id, user_id, rating) VALUES (?, ?, ?)');
-
-    $stmt->execute([$itemId, $_SESSION['id'], $rating]);
-    //header('Location: /pages/item.php?id=' . $_SESSION['id']);
+    if ($count > 0) {
+        echo 'You have already rated this item.';
+    } else {
+        $stmt = $dbh->prepare('INSERT INTO rate (id, user, rate) VALUES (?, ?, ?)');
+        $stmt->execute([$itemId, $_SESSION['id'], $rating]);
+        echo 'Your rating has been submitted successfully.';
+    }
+    header('Location: /pages/review.php');
 }

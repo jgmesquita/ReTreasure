@@ -330,10 +330,14 @@
 <?php } ?>
 
 
-<?php function drawStars() { ?>
-    <form action="/actions/action_rate_item.php" method="POST" id="rating-form">
-    <input type="hidden" name="item_id" value="<?= $item->id ?>">
+<?php function drawStars(int $itemId) { ?>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/css/star_rate.css">
+    </head>
 
+    <form action="/actions/action_rate_item.php" method="POST" id="rating-form">
+    <input type="hidden" name="item_id" value="<?= $itemId ?>">
+    
     <label>
         <input type="radio" name="rating" value="1">
         &#9733;
@@ -354,32 +358,49 @@
         <input type="radio" name="rating" value="5">
         &#9733;&#9733;&#9733;&#9733;&#9733;
     </label>
+    
 
     <input type="submit" value="Submit Rating">
 </form>
 
 <?php } ?>
 
-<?php function drawReview(PDO $dbh, array $items) { ?>
 
-    <p> Your order has been processed successfully! </p>
+<?php function hasUserRatedItem(PDO $dbh, int $itemId, string $username): bool {
+
+    $stmt = $dbh->prepare('SELECT COUNT(*) FROM rate WHERE id = ? AND user = ?');
+    $stmt->execute([$itemId, $username]);
+    $count = $stmt->fetchColumn();
+
+    if(count == 0)
+        return true;
+    return false;
+}?>
+
+
+<?php function drawReview(PDO $dbh, array $items, string $userId) { ?>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/css/star_rate.css">
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+
+    </head>
+
+    <p> We are almost done! </p>
     <p> Thank you for shopping with us </p>
+    <p> Please review your experience and complete your purchase! </p>
 
-    <p> Review your experience </p>
-
-    <a href="checkout.php"> <button> Back </button> </a>
+    <a href="checkout.php" >Back</a>
 
     <section>
-        <?php foreach ($items as $item) { ?>
-                <h3><?=$item->category?></h3>
+        <?php foreach ($items as $item) { 
+            if(!hasItemBeenRated($dbh, $item->id)){ ?>
+                <h4>Product</h4>
                 <p id="descriptionItem">Description: <?=htmlspecialchars($item->descriptionItem)?></p>
                 <p id="model">Model: <?=htmlspecialchars($item->model)?></p>
                 <p id="brand">Brand: <?=htmlspecialchars($item->brand)?></p>
                 <p id="price">Price: <?=$item->price?>&#8364</p>
-                <?php drawStars();?>
-
-
-        <?php } ?>
+                <?php drawStars($item->id);?>
+        <?php }} ?>
 
         <form action="/actions/action_remove_all_items_checkout.php" method="post" class="remove_checkout">
         <button type="submit">Checkout</button>

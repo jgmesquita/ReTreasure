@@ -516,3 +516,16 @@ function update_item(PDO $dbh, int $id, string $category, string $descriptionIte
   $stmt = $dbh->prepare('UPDATE items SET category = ?, descriptionItem = ?, sizeItem = ?, color = ?, price = ?, brand = ?, model = ?, condition = ? WHERE id = ?');
   $stmt->execute(array($category, $descriptionItem, $size, $color, $price, $brand, $model, $condition, $id));
 }
+
+
+function hasItemBeenRated(PDO $dbh, int $itemId): bool {
+    error_log("Checking if item $itemId has been rated");
+    $stmt = $dbh->prepare('SELECT COUNT(*) FROM rate WHERE id = ?');
+    $stmt->execute([$itemId]);
+    $count = $stmt->fetchColumn();
+
+    error_log("Query result: count = $count");
+
+    return $count > 0;
+}
+

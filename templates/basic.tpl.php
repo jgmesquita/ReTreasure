@@ -27,11 +27,11 @@
         <?php
           $categories = get_all_categories($dbh);
           foreach($categories as $category){
-            $parts = explode('-', $category);
+            $parts = explode('-', $category, 2);
             ?>
             <li>
             <a href="items_by_category.php?category=<?=($category) ?>">
-              <?= $parts[1] ?>
+              <?= $parts[1]?>
               </a>
             </li>
           <?php } ?>    
