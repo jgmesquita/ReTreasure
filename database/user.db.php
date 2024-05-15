@@ -529,3 +529,11 @@ function hasItemBeenRated(PDO $dbh, int $itemId): bool {
     return $count > 0;
 }
 
+function hasUserRatedItem(PDO $dbh, int $itemId, string $username): bool {
+
+  $stmt = $dbh->prepare('SELECT COUNT(*) FROM rate WHERE id = ? AND user = ?');
+  $stmt->execute([$itemId, $username]);
+  $count = $stmt->fetchColumn();
+
+  return $count > 0;
+}

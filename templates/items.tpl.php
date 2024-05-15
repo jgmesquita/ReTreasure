@@ -366,19 +366,7 @@
 <?php } ?>
 
 
-<?php function hasUserRatedItem(PDO $dbh, int $itemId, string $username): bool {
-
-    $stmt = $dbh->prepare('SELECT COUNT(*) FROM rate WHERE id = ? AND user = ?');
-    $stmt->execute([$itemId, $username]);
-    $count = $stmt->fetchColumn();
-
-    if(count == 0)
-        return true;
-    return false;
-}?>
-
-
-<?php function drawReview(PDO $dbh, array $items, string $userId) { ?>
+<?php function drawReview(PDO $dbh, array $items, string $username) { ?>
     <head>
         <link rel="stylesheet" type="text/css" href="/css/star_rate.css">
         <link rel="stylesheet" type="text/css" href="/css/style.css">
@@ -387,13 +375,15 @@
 
     <p> We are almost done! </p>
     <p> Thank you for shopping with us </p>
+
     <p> Please review your experience and complete your purchase! </p>
 
     <a href="checkout.php" >Back</a>
 
-    <section>
-        <?php foreach ($items as $item) { 
-            if(!hasItemBeenRated($dbh, $item->id)){ ?>
+    <section>    
+        <?php
+        foreach ($items as $item) { 
+            if(!hasUserRatedItem($dbh, $item->id, $username)){ ?>
                 <h4>Product</h4>
                 <p id="descriptionItem">Description: <?=htmlspecialchars($item->descriptionItem)?></p>
                 <p id="model">Model: <?=htmlspecialchars($item->model)?></p>
