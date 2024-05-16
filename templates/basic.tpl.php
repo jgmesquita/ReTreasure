@@ -8,6 +8,7 @@
   require_once(__DIR__ . '/../database/user.db.php');
 ?>
 
+
 <?php function drawMenu(string $title, PDO $dbh) { ?>
   <!DOCTYPE html>
   <html lang="en-US">
@@ -29,13 +30,14 @@
               <ul>
                   <?php
                   $categories = get_all_categories($dbh);
-                  foreach ($categories as $category) {
-                      ?>
-                      <li>
-                          <a href="items_by_category.php?category=<?= ($category) ?>">
-                              <?= $category ?>
-                          </a>
-                      </li>
+                  foreach($categories as $category){
+                    $parts = explode('-', $category, 2);
+                    ?>
+                    <li>
+                    <a href="items_by_category.php?category=<?=($category) ?>">
+                      <?= $parts[1]?>
+                      </a>
+                    </li>
                   <?php } ?>
               </ul>
           </div>
@@ -43,6 +45,10 @@
   </body>
   </html>
 <?php } ?>
+
+
+
+
 
 
 
@@ -70,7 +76,7 @@
         <img src="/images/logo4.png" alt="ReTreasure Logo" class="logo">
         <h1><a href="/">ReTreasure</a></h1>
         <h2>Rediscover Treasures</h2>
-        <h3>Where Pre-Loved Finds New Love!</h3>
+        <h2>Where Pre-Loved Finds New Love!</h2>
         <button type="show" onclick="toggleAside()">Our Purpose</button>
       </div>
       <?php 
@@ -81,6 +87,24 @@
     <aside>At ReTreasure, we believe that every item has a story and a journey, and it shouldn't end just because it's no longer brand new. Our platform is the premier online destination for buying and selling high-quality, pre-loved items, ranging from fashion and furniture to electronics and toys. Come checkout our amazings sellers! You can join us in our mission to create a better world!
     </aside>
     <main>
+<!--
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    <script src="/javascript/search.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1><a href="/">LTW Shop</a></h1>
+      <h2><p>Rediscover Treasures:<p> Where Pre-Loved Finds New Love!</h2>
+      <nav id="sec">
+      <?/*php 
+        if ($session->isLoggedIn()) drawLogoutForm($session);
+        else drawLoginForm();
+      */?></nav>
+    </header>
+</body>-->
+
 <?php } ?>
 
 <?php function drawHeaderNoLogin(Session $session, string $title) { ?>
@@ -98,11 +122,17 @@
   </head>
   <body>
     <header>
+
       <h1><a href="/">ReTreasure</a></h1>
       <h2>Rediscover Treasures: Where Pre-Loved Finds New Love!</h2>
     </header>
     <aside>At ReTreasure, we believe that every item has a story and a journey, and it shouldn't end just because it's no longer brand new. Our platform is the premier online destination for buying and selling high-quality, pre-loved items, ranging from fashion and furniture to electronics and toys. Come checkout our amazings sellers! You can join us in our mission to create a better world!
     </aside>
+<!--
+      <h1><a href="/">Amazon LTW Shop</a></h1>
+      <h2>Rediscover Treasures: Where Pre-Loved Finds New Love!</h2>
+    </header> -->
+
     <main>
 <?php } ?>
 
@@ -135,6 +165,7 @@
       <a href="/pages/register.php"> Register</a>
       <a href="/pages/search.php"> Search</a>
     </section>
+
   </form>
 <?php } ?>
 
@@ -171,10 +202,23 @@
     <h4>E-mail:</h4>
     <input type="text" name="email" placeholder="email" required>
     <h4>Phone:</h4>
+<!--
+  <form action="/actions/action_register.php" method="post" class="register">
+    <input type="username" name="username" placeholder="username" required>
+    <input type="password" name="password" placeholder="password" required>
+    <input type="text" name="firstName" placeholder="firstName" required>
+    <input type="text" name="lastName" placeholder="lastName" required>
+    <input type="text" name="address_" placeholder="address_" required>
+    <input type="text" name="city" placeholder="city" required>
+    <input type="text" name="country" placeholder="country" required>
+    <input type="text" name="postalCode" placeholder="postalCode" required>
+    <input type="text" name="email" placeholder="email" required>
+-->
     <input type="text" name="phone" placeholder="phone" required>
     <button type="submit">Register</button>
   </form>
 <?php } ?>
+
 
 <!-- Linked every page successfully na verdade falta umas -->
 <?php function drawLogoutForm(Session $session) { ?>
@@ -199,6 +243,7 @@
 <?php } ?>
 
 <?php function drawChangeUsername() { ?>
+
   <head>
     <link rel="stylesheet" href="/css/change.css">
   </head>
@@ -273,6 +318,7 @@
   </section>
 <?php } ?>
 
+
 <?php function drawItemsByCategory(PDO $dbh, string $category, string $title) { ?>
 <!DOCTYPE html>
 <html lang = "en-US">
@@ -295,7 +341,9 @@
 <?php } ?>
 
 <?php function drawError(int $error) { ?>
+
   <section id="error">
+
   <?php switch ($error) { 
     case 1: ?> <p>The password must have at least 8 characters, one of which must be a number!</p> <?php break;
     case 2: ?> <p>The username is already being used! Try another one!</p> <?php break;
@@ -305,4 +353,5 @@
     case 6: ?> <p>The username/password is incorrect!</p> <?php break;
   } ?>
   </section>
+
 <?php } ?>

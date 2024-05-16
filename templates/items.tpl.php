@@ -16,6 +16,7 @@
     </head>
     <section id="items">
         <h3>Our latest items!</h3>
+
         <?php foreach ($items as $item) { ?>
             <?php if (!is_sold($dbh, $item->id)) { ?>
             <article>
@@ -109,6 +110,7 @@
 
 
 <?php function drawListItems(PDO $dbh, array $items) { ?>
+
     <section id="items">
         <h3>There is the list you requested!</h3>
         <table>
@@ -146,6 +148,7 @@
         </table>
         <a href="/pages/profile.php" class="back_special">Back</a>
     </section>
+
 <?php } ?>
 
 <?php function drawListedItems(PDO $dbh, array $items) { ?>
@@ -154,6 +157,7 @@
     </head>  
     <section id="items">
         <h3>There is the list you requested!</h3>
+
         <table>
             <tr>
                 <th>ID</th>
@@ -214,6 +218,7 @@
         <h4>Write a description:</h4>
         <input type="text" name="descriptionItem" placeholder="description" required>
         <h4>Choose a category:</h4>
+
         <select name="category" id="category">
             <?php $categories = get_all_categories($dbh);
             foreach ($categories as $category) { ?>
@@ -242,6 +247,7 @@
                 <option value="<?=$condition?>"><?=$condition?></option>
             <?php } ?> 
         </select>
+
         <h4>Upload a picture:</h4>
         <input type="file" name="image" placeholder="file" required>
         <button type="submit">Register Item</button>
@@ -251,6 +257,7 @@
 <?php function drawUpdateItemForm(PDO $dbh, int $id) { ?>
     <form action="/actions/action_update_item.php" method="post" class="update_item">
         <input type="hidden" name="id" value = <?=$id?>>
+
         <h4>Write a description:</h4>
         <input type="text" name="descriptionItem" placeholder="description" required>
         <h4>Choose a category:</h4>
@@ -276,6 +283,7 @@
         <h4>Model:</h4>
         <input type="text" name="model" placeholder="model" required>
         <h4>Choose a condition:</h4>
+
         <select name="condition" id="condition">
             <?php $conditions = get_all_conditions($dbh);
             foreach ($conditions as $condition) { ?>
@@ -293,6 +301,7 @@
   <section id="search">
     <label>Search an item by writting its description:</label>
     <input type="text">
+
     <table>
       <thead>
         <tr>
@@ -327,6 +336,15 @@
         <section id="currency_conversion">
         <div class="divider"></div>
         <label>Change currency:</label>
+
+        
+<!--
+    </head>
+   
+    <input type="hidden" name="cost" value = <?=$quantity?>>
+    <label>Change currency:</label>
+    <section id="currency_conversion"> -->
+
         <select name="currency" id="currency" onchange="displayCurrency()">
             <option value="USD">USD</option>
             <option value="JPY">JPY</option>
@@ -335,10 +353,10 @@
             <option value="GBP">GBP</option>
         </select>
 
-        <div id="output">Selected Currency: None</div>
+<!--        <div id="output">Selected Currency: None</div>
 
 
-        </section>
+        </section> 
    
     <section id="actions">
     <form action="/actions/action_checkout.php" method="post" class="checkout">
@@ -347,6 +365,92 @@
     <form action="/actions/action_remove_all_items_checkout.php" method="post" class="remove_checkout">
         <button type="submit">Remove All Items</button>
     </form>
-    </section>
+    </section> -->
+
+
+    <!--</section> -->
+    <div id="output">Selected Currency: None</div>
+    <div class="divider"></div>
+    
+    <!--<p>Your order has a total of <?= $total?> items and the cost is <?=$quantity?>&#8364!</p>-->
+
+    <p>TOTAL &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?= $total ?> items &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <?= $quantity ?>&#8364;!</p>
+
+    
+    <form action="/actions/action_checkout.php" method="post" class="checkout">
+        <button type="submit">Continue</button>
+    </form>
+    <!--<form action="/actions/action_remove_all_items_checkout.php" method="post" class="remove_checkout">
+        <button type="submit">Remove All Items</button>
+    </form>-->
+<?php } ?>
+
+
+<?php function drawStars(int $itemId) { ?>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/css/star_rate.css">
+    </head>
+
+    <form action="/actions/action_rate_item.php" method="POST" id="rating-form">
+    <input type="hidden" name="item_id" value="<?= $itemId ?>">
+    
+    <label>
+        <input type="radio" name="rating" value="1">
+        &#9733;
+    </label>
+    <label>
+        <input type="radio" name="rating" value="2">
+        &#9733;&#9733;
+    </label>
+    <label>
+        <input type="radio" name="rating" value="3">
+        &#9733;&#9733;&#9733;
+    </label>
+    <label>
+        <input type="radio" name="rating" value="4">
+        &#9733;&#9733;&#9733;&#9733;
+    </label>
+    <label>
+        <input type="radio" name="rating" value="5">
+        &#9733;&#9733;&#9733;&#9733;&#9733;
+    </label>
+    
+
+    <input type="submit" value="Submit Rating">
+</form>
+
+<?php } ?>
+
+
+<?php function drawReview(PDO $dbh, array $items, string $username) { ?>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/css/star_rate.css">
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+
+    </head>
+
+    <p> We are almost done! </p>
+    <p> Thank you for shopping with us </p>
+
+    <p> Please review your experience and complete your purchase! </p>
+
+    <a href="checkout.php" >Back</a>
+
+    <section>    
+        <?php
+        foreach ($items as $item) { 
+            if(!hasUserRatedItem($dbh, $item->id, $username)){ ?>
+                <img src="<?=$item->imagePath?>">
+                <h4>Product</h4>
+                <p id="descriptionItem">Description: <?=htmlspecialchars($item->descriptionItem)?></p>
+                <p id="model">Model: <?=htmlspecialchars($item->model)?></p>
+                <p id="brand">Brand: <?=htmlspecialchars($item->brand)?></p>
+                <p id="price">Price: <?=$item->price?>&#8364</p>
+                <?php drawStars($item->id);?>
+        <?php }} ?>
+
+        <form action="/actions/action_remove_all_items_checkout.php" method="post" class="remove_checkout">
+        <button type="submit">Checkout</button>
+        </form>
     </section>
 <?php } ?>

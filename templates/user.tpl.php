@@ -14,6 +14,7 @@
 </head>
 
   <section id="profile">
+
     <h3>Welcome, <?=$_SESSION['username']?>!</h3>
     <span id="definition">
       <h4>Definitions</h4>
@@ -82,5 +83,6 @@
       <button type="submit">Introduce new condition</button>
     </form>
   </section>
+
 <?php } ?>
 

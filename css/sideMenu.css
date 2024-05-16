@@ -47,7 +47,7 @@
     background: linear-gradient(135deg,var(--white3), var(--green2), var(--white3));
     transition: left 0.3s ease; 
     top: 100px;  
-    height: 1000px; 
+    height: 800px; 
     width: 200px;
     padding: 20px;
     overflow-y: auto;
