@@ -30,11 +30,10 @@
                   <?php
                   $categories = get_all_categories($dbh);
                   foreach ($categories as $category) {
-                      $parts = explode('-', $category);
                       ?>
                       <li>
                           <a href="items_by_category.php?category=<?= ($category) ?>">
-                              <?= $parts[1] ?>
+                              <?= $category ?>
                           </a>
                       </li>
                   <?php } ?>
@@ -68,6 +67,7 @@
   <body>
     <header>
       <div class="header-container">
+        <img src="/images/logo4.png" alt="ReTreasure Logo" class="logo">
         <h1><a href="/">ReTreasure</a></h1>
         <h2>Rediscover Treasures</h2>
         <h3>Where Pre-Loved Finds New Love!</h3>

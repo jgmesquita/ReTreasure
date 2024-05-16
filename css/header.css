@@ -122,3 +122,23 @@ h3 {
     margin-right: auto; 
     max-width: 960px; 
 }
+
+
+/* logo */
+.logo {
+    max-width: 150px; 
+    height: auto;
+    margin-bottom: 10px; 
+    border-radius: 20px;
+}
+
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: left; 
+    margin-left: auto; 
+    margin-right: auto; 
+    max-width: 960px; 
+}
