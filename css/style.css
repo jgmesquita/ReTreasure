@@ -234,6 +234,19 @@ th a {
   text-decoration: none;
 }
 
+tr:nth-child(odd) {
+  background-color:var(--green2);
+}
+
+tr:nth-child(even) {
+  background-color: var(--green1);
+}
+
+tr:hover {
+  background-color:var(--green4);
+  cursor: pointer; 
+}
+
 /*--------*/
 .divider-container {
   display: flex;
@@ -991,10 +1004,10 @@ button[type="submit"]:hover {
   color: #333333;
 }
 
-#search tbody tr:nth-child(even) {
+/*#search tbody tr:nth-child(even) {
   background-color: #f7f7f7;
 }
-
+*/
 
 /*sideMenu.css--------------------------------------------------------
 */
