@@ -1250,19 +1250,18 @@ form.register button[type="submit"]:focus {
 
 #items a.update-button{
   display: inline-block;
-  padding: 10px 20px;
-  background-color: var(--green5);
-  color: #ffffff;
-  border-radius: 20px;
-  font-size: 0.9em;
-  font-weight: 600;
+  padding: 10px 10px;
+  color: #818181;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
   text-align: center;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 #items a.update-button:hover {
   text-decoration: none;
-  background-color: var(--green4);
+  color:var(--pink2);
 }
 
 /* ---Update button*/

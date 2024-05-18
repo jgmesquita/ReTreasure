@@ -186,7 +186,7 @@
                     echo "<th></th>";
                 }?>
                 <th><a href="/pages/update_item.php?id=<?=$item->id?>" class="update-button">Update</a></th>
-                <th><a href="/pages/update_item.php?id=<?=$item->id?>">Update</a></th>
+                <!--<th><a href="/pages/update_item.php?id=<?=$item->id?>">Update</a></th> -->
             </tr>            
         <?php } ?>
         </table>
