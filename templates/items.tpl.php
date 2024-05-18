@@ -42,10 +42,15 @@
         <link rel="stylesheet" type="text/css" href="/css/specificItem.css">
     </head>
     <section id="item">
+        <?php $avg = getSellerRate($dbh, $item->id, $item->ownerUser)?>
         <h3><?=$item->category?></h3>
         <img src=<?=$item->imagePath?>>
         <section id="specific">
             <p id="seller">Seller: <?=htmlspecialchars($item->ownerUser)?></p>
+
+
+            <p> Seller Rate: <?php if ($avg !== null) { ?> &#9733; <?= htmlspecialchars(number_format($avg, 2)) ?>
+                <?php } else { ?>seller has no rate <?php } ?></p>
             <p id="model">Model: <?=htmlspecialchars($item->model)?></p>
             <p id="brand">Brand: <?=htmlspecialchars($item->brand)?></p>
             <p id="price">Price: <?=$item->price?></p>

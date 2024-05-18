@@ -538,3 +538,11 @@ function hasUserRatedItem(PDO $dbh, int $itemId, string $username): bool {
   return $count > 0;
 }
 
+function getSellerRate(PDO $dbh, int $itemId, string $username){
+  $stmt = $dbh->prepare('SELECT AVG(rate.rate) FROM items JOIN rate on items.id = rate.id
+  WHERE ownerUser = ?');
+  $stmt->execute([$username]);
+  $avg = $stmt->fetchColumn();
+
+  return $avg !== false ? $avg : null;
+}
