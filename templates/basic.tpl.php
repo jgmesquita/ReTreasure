@@ -16,21 +16,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/header.css"> 
-    <link rel="stylesheet" href="/css/login.css"> 
-    <link rel="stylesheet" href="/css/aside.css">
-    <link rel="stylesheet" href="/css/searchItem.css">
-    <link rel="stylesheet" href="/css/change.css">
-    <link rel="stylesheet" href="/css/checkoutItem.css">
-    <link rel="stylesheet" href="/css/drawProfile.css"> 
-    <link rel="stylesheet" href="/css/editProfile.css"> 
-    <link rel="stylesheet" href="/css/latestItems.css">
-    <link rel="stylesheet" href="/css/logout.css">
-    <link rel="stylesheet" href="/css/register.css">
-    <link rel="stylesheet" href="/css/registerItem.css"> 
-    <link rel="stylesheet" href="/css/sideMenu.css"> 
-    <link rel="stylesheet" href="/css/specificItem.css"> 
-    <link rel="stylesheet" href="/css/change.css">
 
     <script src="/javascript/appear_dis.js" defer></script>
     <script src="/javascript/search.js" defer></script>

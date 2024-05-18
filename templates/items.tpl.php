@@ -190,7 +190,7 @@
             </tr>            
         <?php } ?>
         </table>
-        <a href="/pages/profile.php">Back</a>
+        <a href="/pages/profile.php" class="back_special">Back</a>
     </section>
 <?php } ?>
 
