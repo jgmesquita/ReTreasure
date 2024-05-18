@@ -1,0 +1,1157 @@
+@import url('https://fonts.googleapis.com/css2?family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&family=Lobster&family=Paytone+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rowdies:wght@300;400;700&display=swap');
+
+:root {
+  --white1: #FFFEF5;
+  --white2: #FBF7F4;
+  --white3: #FFFFFF;
+  --green1: #EAEEEB;
+  --green2: #BECBC0;
+  --green3: #A7B9AB;
+  --green4: #738D79;
+  --green5: #284730;
+  --pink1: #DC839B;
+  --pink2: #A62048;
+}
+
+
+body {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  overflow-wrap: break-word;
+  word-wrap: break-word; /*palavras passem para proxima linha */
+  word-break: break-word; /*palavras partam se em 2 caract. p/ nao haver overflow */
+  background-color: var(--white3); 
+  width: 80em;
+  margin: 0 auto;  
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* para footer*/
+html {
+  height: 100%; 
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%; 
+}
+
+main {
+  flex: 1; 
+  overflow: auto; /* posso dar scroll*/
+}
+
+footer {
+  height: 50px; 
+  text-align: center;
+  line-height: 50px; 
+}
+
+
+button {
+  padding: 10px 20px;
+  font-weight: bold;
+  background-color: var(--pink1);
+  color: var(--white3);
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; 
+  margin-bottom: 20px; 
+}
+
+button:hover {
+  background-color: var(--pink2);
+}
+
+/*aside.css--------------------------------------------------------
+*/
+aside {
+  position: fixed;
+  bottom: 0; /* aside na parte em baixo da viewport */
+  right: 0;
+  transform: translateY(100%); /* Esconder no inicio*/
+  width: 8%; 
+  background-color: var(--green1);
+  padding: 2em; 
+  color: var(--green5);
+  font-size: 16px; 
+  font-weight: 600;
+  box-shadow: 0 0 10px var(--green2); 
+  z-index: 100; /* certeza que fica por cima dos outros elem.*/
+  transition: transform 0.3s ease; 
+}
+
+.show-aside {
+  transform: translateY(0); /* aside para dentro da view*/
+}
+
+
+/*change.css------------------------------------
+*/
+
+#change {
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 600px; 
+  margin: 50px auto;
+  max-width: 100%;
+  margin: 15px auto; 
+  width: 90%;
+}
+
+#change h4 {
+  margin-bottom: 30px;
+  font-size: 1.8em;
+  color: #333333;
+  font-weight: 600;
+}
+
+#change input[type="text"] {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2em;
+  background-color: #ffffff; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  max-width: 40%;
+  margin: 15px auto; 
+}
+
+#change button[type="submit"] {
+  padding: 15px 30px;
+  background-color: var(--green3); 
+  border: none;
+  border-radius: 20px;
+  font-size: 1.2em;
+  font-weight: 700;
+  color: #000000;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#change button[type="submit"]:hover {
+  background-color: var(--green4); 
+  color: #ffffff;
+  font-weight: 700;
+}
+
+#change a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #333333;
+  font-size: 1.2em;
+  border: 2px solid #333333;
+  border-radius: 20px;
+  transition: color 0.3s, border-color 0.3s;
+  font-weight: 700;
+}
+
+#change a:hover {
+  color: #ffffff;
+  background-color: #333333;
+  border-color: #333333;
+}
+
+/*checkoutItem.css--------------------------------------------------------
+*/
+p {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #000000;
+  font-weight: bold;
+  margin-bottom: 20px; 
+}
+
+form {
+  margin-bottom: 20px; 
+}
+
+label {
+  display: block;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 3px;
+  color: #4d4747;
+  font-weight: 500; 
+  font-size: 0.7em;
+  font-weight: bold;
+}
+
+#output {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #333;
+  color: #4d4747;
+  font-size: 0.7em;
+  font-weight: 700;
+}
+
+/*------------*/
+
+#items {
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: 0.8em; 
+}
+
+th, td {
+  padding: 8px; 
+  border: 1px solid #e0e0e0;
+  text-align: center;
+  font-family: "Poppins", sans-serif; 
+}
+
+th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
+th a {
+  color: #333;
+  text-decoration: none;
+}
+
+/*--------*/
+.divider-container {
+  display: flex;
+  justify-content: center; 
+}
+
+.divider {
+  height: 2px;
+  background-color: #333; 
+  margin: 20px auto; 
+  width: 80%; 
+}
+
+/*----header choices----*/
+#links {
+  background-color: #f2f2f2; 
+  padding: 10px; 
+  text-align: center; 
+  width: 80%; 
+  margin: 0 auto; 
+  border-radius: 30px; 
+  font-weight: 700;
+  margin-bottom: 100px;
+}
+
+#links a {
+  display: inline-block; 
+  padding: 8px 16px; 
+  margin: 0 5px;    
+  color: rgb(0, 0, 0);
+  text-decoration: none; 
+  border-radius: 30px; 
+}
+
+#links a:hover {
+  background-color: #ffffff; 
+  color:var(--green4); 
+}
+
+/*BACK BUTTON*/
+.back_special {
+  position: relative;
+  padding: 20px 40px; 
+  color: #333; 
+  text-decoration: none; 
+  font-weight: 700;
+  display: inline-block; 
+  margin: 20px 0; 
+  background-color: #f2f2f2; 
+  border-radius: 50px; 
+  overflow: hidden;
+}
+
+.back_special::before {
+  content: ''; 
+  position: absolute;
+  left: 20px; 
+  top: 50%;
+  transform: translateY(-50%) rotate(0deg); 
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid transparent; 
+  border-left: 2px solid transparent; 
+  transition: transform 0.3s ease, border-top 0.3s ease, border-left 0.3s ease; 
+}
+
+.back_special:hover::before {
+  transform: translate(-3px, -50%) rotate(-45deg); 
+  border-top: 2px solid #333; 
+  border-left: 2px solid #333; 
+}
+
+/*-------------*/
+.checkout button[type="submit"] {
+  margin-top: 30px;
+  text-align: center;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: 700;
+  background-color: var(--green5);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.checkout button[type="submit"]:hover {
+  background-color: var(--green4);
+}
+
+.remove_checkout button[type="submit"] {
+  text-align: center;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: 700;
+  background-color: var(--pink2); 
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.remove_checkout button[type="submit"]:hover {
+  background-color: var(--pink1); 
+}
+
+/*-----------*/
+#currency_conversion select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 25%;
+  padding: 12px 16px; 
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 8px;
+  color: #333;
+  cursor: pointer;
+  position: relative; 
+  border: 1px solid var(--green1);
+  box-shadow: 0 0 5px var(--green1);
+  background-color: var(--pink1); 
+}
+
+/* Seta*/
+#currency_conversion select {
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><path fill="%23333" d="M7 10l5 5 5-5z"/></svg>') no-repeat;
+  background-position: right 12px center; 
+  background-size: 30px 30px;  /*Tamanho seta*/
+}
+
+#currency_conversion select:hover {
+  background-color: var(--green1);
+}
+
+#currency_conversion select:focus {
+  outline: none;
+  border: 1px solid var(--green1);
+  box-shadow: 0 0 5px var(--green1);
+  background-color: var(--white3); 
+}
+
+/* ----- */
+#retangulo {
+  padding: 50px;
+  background-color: #f9f9f9; 
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  max-width: 600px; 
+  margin: 0 auto; 
+}
+
+/*drawProfile.css--------------------------------------------------------
+*/
+/*
+body {
+  max-width: 95%; 
+  margin: 0 auto;
+  padding-top: 50px; 
+  display: flex; 
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
+}*/
+
+#profile {
+  padding: 50px;
+  background-color: #f9f9f9; 
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  max-width: 80%;
+  margin: auto;
+}
+
+#profile h3 {
+  margin-bottom: 20px;
+  font-size: 3.5em; 
+  font-weight: 700;
+  color: #333333;
+}
+
+#profile h4 {
+  margin-bottom: 20px; 
+  font-size: 1.8em; 
+  font-weight: 600; 
+  color: #555555; 
+}
+
+#profile span {
+  display: block;
+  margin-bottom: 30px; 
+}
+
+#profile a {
+  display: inline-block;
+  padding: 15px 30px;
+  border-radius: 25px;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1.4em;
+  font-weight: 600; 
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, var(--pink1), var(--pink2));
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+#profile a:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, var(--green2), var(--green4));
+}
+
+/*editProfile.css--------------------------------------------------------
+*/
+
+/*TUDO MAIS ESTREITO
+body { 
+  padding-top: 50px; 
+  align-items: center; 
+}*/
+
+#options {
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  max-width: 70%;
+  margin: 15px auto; 
+}
+
+#options h3 {
+  margin-bottom: 30px;
+  font-size: 1.8em;
+  color: #333333;
+  font-weight: 600;
+}
+
+#options a {
+  max-width: 70%;
+  display: block;
+  padding: 20px 30px;
+  margin: 15px auto;  
+  background-color: #e0e0e0;
+  border-radius: 20px;
+  text-decoration: none;
+  color: #333333;
+  font-weight: bold;
+  font-size: 1.2em;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#options a:hover {
+  background-color: #6a6969;
+  color: #ffffff;
+}
+
+/*header.css--------------------------------------------------------
+*/
+h1 {
+  font-family: "Lobster", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #333; 
+  margin-bottom: 0px;
+  letter-spacing: -0.5px; 
+  font-size: 2.9em; 
+  text-align: center; 
+}
+h1 a { 
+  transition: font-size 0.3s ease; 
+}
+
+h1 a:link {
+  color: rgb(230, 138, 138); 
+  text-decoration: none;
+}
+
+h1 a:visited {
+  color: rgb(7, 8, 7); 
+  text-decoration: none;   
+}
+
+h1 a:active {
+  color: rgb(41, 79, 55); 
+  text-decoration: none;
+}
+
+h1 a:hover {
+  text-decoration: none;
+  font-size: 1.1em; 
+}
+
+h2{
+  font-family: "Poppins", sans-serif;
+  font-weight: 550;
+  font-style: normal;
+  font-size: 0.6em; 
+  color:var(--green5);
+  color: #333;
+  grid-area: header;
+  padding: 1em;
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+h3 {
+  margin-bottom: 10px;
+  margin-top:0;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-size: 0.01em; 
+  font-weight: 550;
+  text-align: center;
+  color:var(--green5);
+  color: #333;
+}
+
+/* logo */
+.logo {
+  max-width: 150px; 
+  height: auto;
+  margin-bottom: 10px; 
+  border-radius: 20px;
+}
+
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  text-align: left; 
+  margin-left: auto; 
+  margin-right: auto; 
+  max-width: 960px; 
+  margin-bottom: 50px; 
+}
+
+
+/*latestItems.css--------------------------------------------------------
+*/
+#items2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 80px; /* ESPACO ENTRE OS PROPDUTOS*/
+  padding: 30px;
+}
+
+#items2 h3 {
+  grid-column: span 3;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.5em;
+  font-weight: 700;
+  color: #333333;
+}
+
+#items2 article {
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+#items2 article:hover {
+  transform: scale(1.05);
+}
+
+#items2 article h3 {
+  font-size: 1.5em;
+  color: #666666;
+}
+
+#items2 article img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+#items2 article a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+#items2 article a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+#items2 article #description {
+  cursor: pointer;
+}
+
+#items2 article #description p {
+  margin-bottom: 10px;
+  color: #333333;
+}
+
+#items2 article #description #descriptionItem {
+  font-weight: bold;
+}
+
+#items2 article #description #price {
+  font-weight: bold;
+  color: #b34382;
+}
+
+
+/* ANTIGO PARA uma coluna apenas
+#items h3 {
+  margin-bottom: 30px;
+  font-size: 2.5em;
+  font-weight: 700;
+  color: #333333; 
+}
+
+#items article {
+  padding: 30px;
+  background-color: #ffffff; 
+  border-radius: 15px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+  margin-bottom: 60px;
+  transition: transform 0.3s;
+}
+
+#items article:hover {
+  transform: scale(1.05); 
+}
+
+#items article h3 {
+  font-size: 1.5em;
+  color: #666666;
+}
+
+#items article img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+#items article a {
+  display: block; 
+  text-decoration: none; 
+  color: inherit; 
+
+}
+#items article a:hover {
+  text-decoration: none;
+  color: inherit; 
+}
+
+#items article #description {
+  cursor: pointer; 
+}
+
+#items article #description p {
+  margin-bottom: 10px;
+  color: #333333; 
+}
+
+#items article #description #descriptionItem {
+  font-weight: bold;
+}
+
+#items article #description #price {
+  font-weight: bold;
+  color: #b34382; 
+}*/
+
+/*login.css--------------------------------------------------------
+*/
+.login {
+  background-color: #ffffff;  
+  padding: 40px;             
+  border-radius: 15px;      
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  width: 100%;               
+  max-width: 400px;         
+  margin: 40px auto;      
+  display: flex;            
+  flex-direction: column;   
+  box-sizing: border-box;    
+}
+
+
+input[type="username"],
+input[type="password"] {  
+  margin: 0 auto 10px; 
+  border: 1px solid #ccc; 
+  background-color: #f9f9f9; 
+  box-sizing: border-box; 
+  display: block; 
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cccccc;
+  border-radius: 10px; 
+  font-size: 1em;
+  font-weight: 600;
+  border-radius: 20px;
+}
+
+input[type="username"]:hover,
+input[type="password"]:hover {
+  border-color: #999;
+}
+
+
+.login a {
+  display: inline-block;
+  margin: 8px 12px;
+  padding: 10px 30px ; 
+  text-decoration: none;
+  background-color: #cac9c9;
+  color: #635f5f;
+  font-size: 16px;
+  border-radius: 20px; 
+  transition: background-color 0.3s, color 0.3s; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+
+.login a:hover {
+  background-color: #464444; 
+  color: var(--white3); 
+}
+
+/* login button*/
+button[type="submit"] { 
+  background-color: var(--green5);
+  color:#ffffff;
+}
+
+
+button[type="submit"]:hover {
+  background-color: var(--green4);
+  color: var(--white3);
+}
+
+/*logout.css--------------------------------------------------------
+*/
+.logout button {
+  background-color:var(--green3);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  font-style:normal;
+  cursor: pointer;
+  border-radius: 999em;
+  transition: background-color 0.3s ease;
+  margin: 0 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.logout button:hover {
+  background-color: var(--green5);
+  transform: translateY(-2px); 
+}
+
+
+.logout button:focus {
+  outline: none; 
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2); 
+}
+
+/*register.css--------------------------------------------------------
+*/
+#register {
+  padding: 30px;
+  background-color: #f5f5f5; 
+  border-radius: 30px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 600px; 
+  margin: 50px auto;
+}
+
+#register h2 {
+  margin-bottom: 20px;
+  font-size: 2em;
+  color: #333333;
+  text-align: center;
+}
+
+#register h3 {
+  margin-bottom: 30px;
+  font-size: 1.2em;
+  color: #666666;
+  text-align: center;
+}
+
+.register {
+  padding: 50px;
+  background-color: #f5f5f5; 
+  border-radius: 50px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  max-width: 500%;
+  margin: 50px auto;
+}
+
+.register h4 {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  color: #333333;
+}
+
+.register input[type="text"],
+.register input[type="username"] ,
+.register input[type="password"] {
+  margin-bottom: 15px;
+  padding: 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 1em;
+  background-color: #ffffff; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 70%;
+  font-weight: 600;
+}
+
+.register button[type="submit"] {
+  width: 50%;
+  padding: 15px;
+  background-color: var(--green5); 
+  border: none;
+  border-radius: 20px;
+  font-size: 1.2em;
+  font-weight: 700;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.register button[type="submit"]:hover {
+  background-color: var(--green4);
+}
+
+/*registerItem.css--------------------------------------------------------
+*/
+.register_item {
+  max-width: 60%;
+  max-width: 600px; 
+  padding: 30px;
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 0 auto; 
+}
+
+
+.register_item h4 {
+  margin: 0 0 15px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #333333;
+}
+
+.register_item input[type="text"],
+.register_item input[type="number"],
+.register_item select,
+.register_item input[type="file"] {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 20px;
+  background-color: #f5f5f5;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: 700;
+  color: #333333;
+}
+
+.register_item select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.register_item button[type="submit"] {
+  background-color: var(--pink2);
+  color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  padding: 14px 0;
+  width: 100%;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.register_item button[type="submit"]:hover {
+  background-color: var(--pink1);
+  border-radius: 20px;
+}
+
+/*searchItem.css--------------------------------------------------------
+*/
+#search {
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+#search label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #333333;
+}
+
+#search input[type="text"] {
+  width: 50%;
+  padding: 12px;
+  border: 1px solid #cccccc;
+  border-radius: px;
+  margin-bottom: 20px;
+  font-size: 1em;
+  border-radius: 20px;
+}
+
+#search table {
+  max-width: 100%; 
+  width: 100%; 
+  border-collapse: collapse;
+
+}
+
+#search th, #search td {
+  border: 1px solid #dddddd;
+  padding: 12px;
+}
+
+#search th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  color: #333333;
+}
+
+#search tbody tr:nth-child(even) {
+  background-color: #f7f7f7;
+}
+
+
+/*sideMenu.css--------------------------------------------------------
+*/
+.sidebar-wrapper {
+  position: fixed;
+  top: 0;
+  left: -300px; 
+  background-color: #f2f2f2;
+  transition: left 0.3s ease; 
+  top: 100px;  
+  height: 700px; 
+  width: 200px;
+  padding: 20px;
+  overflow-y: auto;
+  border-radius: 20px; 
+}
+
+.menu_button {
+  position: fixed;
+  top: 20px;
+  left: 50px;
+  width: 40px;
+  height: 40px;
+  background-color: var(--green3);
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white; 
+}
+
+
+.menu_button:hover {
+  background-color: var(--green4);
+}
+
+.side ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.side li {
+  margin: 10px 0;
+}
+
+.side a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+}
+
+.side a:hover {
+  background-color: var(--green4);
+  color: #fffafa;
+}
+
+
+/*specificItem.css--------------------------------------------------------
+*/
+#item {
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 55px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#item h3 {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 20px;
+}
+
+#item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+#specific p {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  color: #666666;
+}
+
+#specific #descriptionItem {
+  font-weight: bold;
+}
+
+#specific #price {
+  font-weight: bold;
+  color: #9a277f; 
+}
+
+#addcomment, #wb{
+  margin-top: 30px;
+}
+
+#addcomment h3, #wb h3{
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 15px;
+}
+
+.comment, .wishlist, .buy, .reply {
+  margin-top: 15px;
+}
+
+.comment input[type="text"], .reply input[type="text"]{
+  width: 50% ;
+  padding: 15px;
+  border-radius: 30px;
+  border: 2px solid #ccc;
+  margin-right: 10px;
+  font-weight: 700;
+}
+
+.comment button, .wishlist button, .buy button, .reply button{
+  padding: 15px 30px;
+  border: none;
+  border-radius: 30px;
+  background-color: #6a6969;
+  color: #ffffff;
+  font-size: 1.2em;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.wishlist button{
+  background-color: rgb(196, 78, 108);
+}
+
+.buy button{
+  background-color: var(--green4);
+}
+
+.comment button:hover,.reply button:hover {
+  background-color: #444;
+}
+
+.wishlist button:hover{
+  background-color: var(--pink2);
+}
+.buy button:hover{
+  background-color: var(--green5);
+}
