@@ -41,7 +41,7 @@
             <p id="seller">Seller: <?=htmlspecialchars($item->ownerUser)?></p>
             <p id="model">Model: <?=htmlspecialchars($item->model)?></p>
             <p id="brand">Brand: <?=htmlspecialchars($item->brand)?></p>
-            <p id="price">Price: <?=$item->price?></p>
+            <p id="price">Price: <?=$item->price?>&#8364</p>
             <p id="descriptionItem">Description: <?=htmlspecialchars($item->descriptionItem)?></p>
         </section>
     </section>
@@ -185,8 +185,8 @@
                     echo "Listed" . "</th>";
                     echo "<th></th>";
                 }?>
+                <th><a href="/pages/update_item.php?id=<?=$item->id?>" class="update-button">Update</a></th>
                 <th><a href="/pages/update_item.php?id=<?=$item->id?>">Update</a></th>
-                <td><a href="/pages/update_item.php?id=<?=$item->id?>" class="update-button">Update</a></td>
             </tr>            
         <?php } ?>
         </table>

@@ -20,5 +20,8 @@
 
   $category = $_GET['category'];
 
+  drawHeader($session, "$category", $dbh);
   drawItemsByCategory($dbh, $category, "Sorted by Category");
+  /*$items = get_items_by_category($dbh, $category);
+            drawItems($dbh, $items);*/
   drawFooter();

@@ -227,24 +227,13 @@
 <?php } ?>
 
 <?php function drawItemsByCategory(PDO $dbh, string $category, string $title) { ?>
-<!DOCTYPE html>
-<html lang = "en-US">
-    <head>
-        <title><?=$title?></title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/css/style.css">
-    </head>
-    <body> 
-        <h4>
             <?php
             $items = get_items_by_category($dbh, $category);
             drawItems($dbh, $items);
             ?>
-        </h4>
-    </body>
-
 <?php } ?>
+
+
 
 <?php function drawError(int $error) { ?>
   <section id="error">
