@@ -16,7 +16,11 @@
 
   $dbh = get_database_connection();
 
-  drawHeaderNoLogin($session, "Change Email");
+  /*drawHeaderNoLogin($session, "Change Email");
+  if (isset($_SESSION['username'])) {
+    drawChangeEmail();
+  }*/
+  drawHeader($session, "Change Email", $dbh);
   if (isset($_SESSION['username'])) {
     drawChangeEmail();
   }

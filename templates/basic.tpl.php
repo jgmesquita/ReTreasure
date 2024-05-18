@@ -61,12 +61,6 @@
 <?php function drawHeaderNoLogin(Session $session, string $title) { ?>
 <!DOCTYPE html>
 <html lang="en-US">
-  <head>
-    <title><?=$title?></title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
-  </head>
   <body>
     <header>
       <div class="header-container">
@@ -93,31 +87,26 @@
 <?php } ?>
 
 <?php function drawMenu(string $title, PDO $dbh) { ?>
-  <!DOCTYPE html>
-  <html lang="en-US">
-  <body>
-    <button class="menu_button" onclick="toggleMenu()">
-      <i class="fas fa-bars"></i> 
-  </button>  
-      <div class="sidebar-wrapper" id="sidebar">
-          <div class="side">
-              <h4>MENU</h4>
-              <ul>
-                  <?php
-                  $categories = get_all_categories($dbh);
-                  foreach ($categories as $category) {
-                      ?>
-                      <li>
-                          <a href="items_by_category.php?category=<?= ($category) ?>">
-                              <?= $category ?>
-                          </a>
-                      </li>
-                  <?php } ?>
-              </ul>
-          </div>
-      </div>
-  </body>
-  </html>
+  <button class="menu_button" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i> 
+</button>
+    <div class="sidebar-wrapper" id="sidebar">
+        <div class="side">
+            <h4>MENU</h4>
+            <ul>
+                <?php
+                $categories = get_all_categories($dbh);
+                foreach ($categories as $category) {
+                    ?>
+                    <li>
+                        <a href="items_by_category.php?category=<?= ($category) ?>">
+                            <?= $category ?>
+                        </a>
+                    </li>
+                <?php } ?>
+            </ul>
+        </div>
+    </div>
 <?php } ?>
 
 

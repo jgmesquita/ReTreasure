@@ -15,8 +15,12 @@
   require_once(__DIR__ . '/../templates/user.tpl.php');
 
   $dbh = get_database_connection();
-
+/*
   drawHeaderNoLogin($session, "Change Password");
+  if (isset($_SESSION['username'])) {
+    drawChangePassword();
+  }*/
+  drawHeader($session, "Change Password", $dbh);
   if (isset($_SESSION['username'])) {
     drawChangePassword();
   }
