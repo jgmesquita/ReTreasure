@@ -1004,7 +1004,7 @@ form.register button[type="submit"]:focus {
   margin-bottom: 20px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   height: 40%; 
-  max-height: 1000px;
+  height: 800px;
   object-fit: cover; 
 }
 
@@ -1172,7 +1172,7 @@ form.register button[type="submit"]:focus {
  }
  
  @media (max-width: 2400px) {
-  /* body {
+   /*body {
      background-color: rgb(207, 108, 197); 
    }*/
    #items2 {
@@ -1187,12 +1187,12 @@ form.register button[type="submit"]:focus {
    }
  }
  
-@media (max-width: 1900px) {
- /* body {
+@media (max-width: 2000px) {
+  /*body {
     background-color: rgb(207, 108, 197); 
   }*/
   #links {
-    width: 750px; 
+    width: 800px; 
   }
 }
 
