@@ -8,7 +8,7 @@ Para este ano letivo, foi proposto criarmos um website, cujo o tema era "Venda d
 * Jorge Mesquita (up202108614)
 
 ### ReTreasure
-ReTreasure é o nome do meu website, cuja a missão é criar uma network onde os utilizadores podem comprar e/ou vender artigos em segunda-mão. A nossa missão é promovermos a sustentabilidade e reduzirmos o consumismo, um problema bastante prevalente na nossa sociedade!
+ReTreasure é o nome do nosso website, cuja a missão é criar uma network onde os utilizadores podem comprar e/ou vender artigos em segunda-mão. A nossa missão é promovermos a sustentabilidade e reduzirmos o consumismo, um problema bastante prevalente na nossa sociedade!
 
 ### Tópicos
 - HTML
@@ -32,11 +32,9 @@ Quando é necessário fazer a ligação entre a interação website-utilizador, 
 <img src="/images/2.png" width=40%>
 
 ### CSS
-O desafio seguinte é definirmos a parte visual de cada página, criando um ficheiro CSS. É importante definirmos um design uniforme e acessível. No meu design, utilizei diversas propriedades, como o grid, flex e também o uso de @keyframe.
+O desafio seguinte é definirmos a parte visual de cada página, criando um ficheiro CSS. É importante definirmos um design uniforme e acessível. No meu design, utilizei diversas propriedades, como o grid, flex.
 
-<img src="/images/3.png" width=40%>
-<img src="/images/4.png" width=40%>
-<img src="/images/6.png" width=40%>
+<img src="/images/grid.png" width=40%>
 
 ### PHP
 O desafio mais longo foi, sem dúvida, criar o HTML a partir de templates e fazer a ligação entre o website e o servidor, nomeadamente com a base de dados. Além disso, o PHP foi essencial para o uso de API's externas, como a conversão de moedas.
@@ -46,8 +44,8 @@ O desafio mais longo foi, sem dúvida, criar o HTML a partir de templates e faze
 ### JavaScript
 Uma das partes mais interessantes deste projeto foi criar uma search bar dinâmica e interativa e, também, atualizar contéudas da página sem ser necessário fazer refresh.
 
-<img src="/images/7.png" width=40%>
-<img src="/images/8.png" width=40%>
+<img src="/images/js.png" width=40%>
+<img src="/images/js2.png" width=40%>
 
 ### Segurança
 Estando o nosso website quase pronto, é essencial revermos alguns aspetos que podem compremeter a nossa segurança. 
@@ -77,6 +75,6 @@ Um ponto crucial é impedirmos a injeção de dados ou queries nocivas na nossa 
 <img src="/images/15.png" width=40%>
 
 ### Noções Gerais
-Este foi um dos projetos onde adquiri diversas competências durante a sua realização. Foi possível explorar novos conceitos, indo para além das competências da unidade curricular, e, essencialmente, foi possível consolidar as competências adquiridas.
-Cumpri 100% dos parâmetros obrigatórios e explorei alguns opcionais, como a realização de comentários num artigo e a conversão entre moedas. 
-Posto isto, considero que este projeto foi bem sucedido e tive uma boa prestação!
+Este foi um dos projetos onde adquirimos diversas competências durante a sua realização. Foi possível explorar novos conceitos, indo para além das competências da unidade curricular, e, essencialmente, foi possível consolidar as competências adquiridas.
+Cumprimos 100% dos parâmetros obrigatórios e exploramos alguns opcionais, como a realização de comentários num artigo e a conversão entre moedas. 
+Posto isto, consideramos que este projeto foi bem sucedido e tivemos uma boa prestação!
