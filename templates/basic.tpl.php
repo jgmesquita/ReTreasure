@@ -43,24 +43,6 @@
     <main>
 <?php } ?>
 
-<?php function drawHeaderNoLogin(Session $session, string $title) { ?>
-<!DOCTYPE html>
-<html lang="en-US">
-  <body>
-    <header>
-      <div class="header-container">
-        <img src="/images/logo4.png" alt="ReTreasure Logo" class="logo">
-        <h1><a href="/">ReTreasure</a></h1>
-        <h2>Rediscover Treasures</h2>
-        <h3>Where Pre-Loved Finds New Love!</h3>
-        <button type="show" onclick="toggleAside()">Our Purpose</button>
-      </div>
-    </header>
-    <aside>At ReTreasure, we believe that every item has a story and a journey, and it shouldn't end just because it's no longer brand new. Our platform is the premier online destination for buying and selling high-quality, pre-loved items, ranging from fashion and furniture to electronics and toys. Come checkout our amazings sellers! You can join us in our mission to create a better world!
-    </aside>
-    <main>
-<?php } ?>
-
 
 <?php function drawFooter() { ?>
     </main>

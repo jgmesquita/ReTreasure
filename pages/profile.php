@@ -16,11 +16,6 @@
 
   $dbh = get_database_connection();
 
-  /*if (isset($_SESSION['username'])) {
-    drawHeaderNoLogin($session, "Profile - " . $_SESSION['username']);
-    drawProfile();
-    drawFooter();
-  }*/
 
   if (isset($_SESSION['username'])) {
     drawHeader($session, "Profile - " . $_SESSION['username'], $dbh);

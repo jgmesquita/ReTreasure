@@ -14,7 +14,6 @@
 
   $dbh = get_database_connection();
 
-  /*drawHeaderNoLogin($session, "Register");*/
   drawHeader($session, "Register", $dbh);
   drawRegisterForm();
   drawFooter();

@@ -15,11 +15,7 @@
   require_once(__DIR__ . '/../templates/user.tpl.php');
 
   $dbh = get_database_connection();
-/*
-  drawHeaderNoLogin($session, "Edit Profile");
-  if (isset($_SESSION['username'])) {
-    drawOptionsProfile();
-  }*/
+
   drawHeader($session, "Edit Profile", $dbh);
   if (isset($_SESSION['username'])) {
     drawOptionsProfile();
