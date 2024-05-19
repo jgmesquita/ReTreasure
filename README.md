@@ -32,7 +32,7 @@ Quando é necessário fazer a ligação entre a interação website-utilizador, 
 <img src="/images/2.png" width=40%>
 
 ### CSS
-O desafio seguinte é definirmos a parte visual de cada página, criando um ficheiro CSS. É importante definirmos um design uniforme e acessível. No meu design, utilizei diversas propriedades, como o grid, flex.
+O desafio seguinte é definirmos a parte visual de cada página, criando um ficheiro CSS. É importante definirmos um design uniforme e acessível. No nosso design, utilizamos diversas propriedades, como o grid, flex.
 
 <img src="/images/grid.png" width=40%>
 
